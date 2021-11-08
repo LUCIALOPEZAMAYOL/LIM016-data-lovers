@@ -1,0 +1,23 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: #54A6F2;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .titulo{ 
+    height: 30%;
+    width: 50%;
+    padding-right: 25%;
+    margin-top: 10px;
+}
+header .logo{
+    height: 100px;
+    width: 160px;
+    object-fit: cover;
+    margin-top: 10px;
+}
+
