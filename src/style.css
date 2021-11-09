@@ -2,10 +2,12 @@ body{
     margin: 0;
     padding: 0;
 }
-.header {
-    background-color: #54A6F2;
+.header section  {
+    background: #54A6F2;
     display: flex;
     justify-content: space-between;
+    height: 100%;
+    width: 100%;
 }
 
 header .titulo{ 
@@ -21,3 +23,40 @@ header .logo{
     margin-top: 10px;
 }
 
+.box_navegador{
+    margin-top: 1%;
+    padding-left:2%; 
+    display: flex;
+}
+
+nav .buscador{
+    padding: 9px 10px 9px 40px;
+    font-size: 18px;
+    border-radius: 15px;
+    outline:none;
+    border: 3px solid;
+    background: #fff url(Imagenes/icons8-búsqueda-24.png) no-repeat 2px center;
+    width: 60px;
+    transition: all .5s;
+}
+
+input.buscador:hover{
+    width: 250px;
+    background-color: rgb(250, 250, 249);
+    border-color: rgb(248, 248, 247);
+    box-shadow: 0px 0px 15px white, 0px 0px 15px crimson;
+} 
+
+/*lista desplegable*/
+
+ul,li{
+    list-style:none;
+}
+
+.box_navegador li ul{
+    display: none;
+}
+
+.box_navegador li:hover > ul{
+    display: block;
+}
