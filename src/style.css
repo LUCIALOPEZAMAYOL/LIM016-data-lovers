@@ -1,8 +1,14 @@
 body{
     margin: 0;
     padding: 0;
+    background-image: url(Imagenes/fondoPokemon.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
-.header section  {
+/* Estilos para encabezado*/
+.header .imagenes  {
     background: #54A6F2;
     display: flex;
     justify-content: space-between;
@@ -11,52 +17,318 @@ body{
 }
 
 header .titulo{ 
-    height: 30%;
-    width: 50%;
-    padding-right: 25%;
-    margin-top: 10px;
-}
-header .logo{
-    height: 100px;
-    width: 160px;
-    object-fit: cover;
-    margin-top: 10px;
+    height: 15%;
+    width: 30%;
+    padding-right: 35%;
+    display: block;
 }
 
+header .logo{
+    height: 10%;
+    width: 10%;
+    object-fit: cover;
+    display: block;
+}
+
+/*Estilos para barra de navegación*/
 .box_navegador{
     margin-top: 1%;
-    padding-left:2%; 
     display: flex;
+    justify-content: space-between;
 }
 
 nav .buscador{
+    display: flex;
+    justify-content: right;
     padding: 9px 10px 9px 40px;
     font-size: 18px;
     border-radius: 15px;
     outline:none;
     border: 3px solid;
     background: #fff url(Imagenes/icons8-búsqueda-24.png) no-repeat 2px center;
-    width: 60px;
+    width: 5%;
     transition: all .5s;
 }
 
 input.buscador:hover{
-    width: 250px;
+    width: 230px;
     background-color: rgb(250, 250, 249);
-    border-color: rgb(248, 248, 247);
-    box-shadow: 0px 0px 15px white, 0px 0px 15px crimson;
+    border-color: rgb(236, 236, 9);
+    box-shadow: 0px 0px 10px white, 0px 0px 20px rgb(200, 220, 20);
 } 
+nav .buscar{
+    padding-left: 20px;
+    width: 230px;
+    height: 80px;
+}
 
-/*lista desplegable*/
 
-ul,li{
+/*Estilo para lista desplegable*/
+
+nav ul li{
     list-style:none;
 }
 
-.box_navegador li ul{
+.lista li ul{
     display: none;
+    position: absolute;
+    min-width: 140px;
 }
 
-.box_navegador li:hover > ul{
+.lista li:hover > .tipos_de{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2px;
+}
+
+.lista li:hover > .ordenar_por{
+    display: flex;
+    flex-direction: column;
+
+}
+.lista li a{
+    text-decoration: none;
+    font-size: 20px;
+    background-color: black;
+    color: blanchedalmond;
+    box-shadow: 0px 0px 5px white, 0px 0px 15px rgb(220, 217, 20);
     display: block;
+    padding: 10px;
+    width: 150px;
+    border-radius: 15px;
+    margin-right: 10px;
+    margin-left: 10px; 
+    text-align: center;
+}
+
+.lista li .submenu{
+    width: 80px;
+    font-size: 15px;
+    text-align: center;
+    
+}
+.lista > li{
+    float: left;
+}
+
+.box-filtros{
+    width:auto;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    display: inline-block;
+}
+
+nav .lista{
+    margin:0%;
+    padding: 0%;
+}
+
+.tipos_de{
+    width: 300px;
+}
+
+/*Estilos botones de calcular y top 10*/
+nav .btns-calculo-top{
+    margin-right: 0px;
+    width: auto;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+nav .btns{
+    height: 40px;
+    width: 90px;
+    border-radius: 15px;
+    font-size: 18px;
+    background-color: black;
+    border-style: none;
+    color: blanchedalmond;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px white, 0px 0px 15px rgb(220, 217, 20);
+    margin-right: 20px;
+    margin-left: 10px; 
+}
+
+/*color para subitem tipos*/
+nav .tipos_de #RobRoy:hover{
+    background-color: #a8a878;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+
+}
+
+nav .tipos_de #Firebrick:hover{
+    background-color: #c02038;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
+nav .tipos_de #JordyBlue:hover{
+    background-color: #a890f0;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
+nav .tipos_de #PigmentIndigo:hover{
+    background-color: #a040a0;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
+nav .tipos_de #Calico:hover{
+    background-color: #e0c068;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
+nav .tipos_de #RawSienna:hover{
+    background-color: #b8a038;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
+nav .tipos_de #Atlantis:hover{
+    background-color: #a8b820;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
+nav .tipos_de #FreshEggplant:hover{
+    background-color: #705898;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
+nav .tipos_de #LightGrey:hover{
+    background-color: #b8b8d0;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
+nav .tipos_de #orange:hover{
+    background-color: #f08030;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
+nav .tipos_de #BrightTurquoise:hover{
+    background-color: #6890f0;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
+nav .tipos_de #Green:hover{
+    background-color: #78c850;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
+nav .tipos_de #yelow:hover{
+    background-color: #f8d030;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
+nav .tipos_de #Meteorite:hover{
+    background-color: #f85888;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
+nav .tipos_de #Sinbad:hover{
+    background-color: #98d8d8;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
+nav .tipos_de #CornflowerBlue:hover{
+    background-color: #7038f8;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
+nav .tipos_de #SlateGray:hover{
+    background-color: #705848;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
+nav .tipos_de #VividTangerine:hover{
+    background-color: #ee99ac;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
