@@ -40,18 +40,19 @@ header .logo{
 nav .buscador{
     display: flex;
     justify-content: right;
-    padding: 9px 10px 9px 40px;
+    padding: 9px 10px 9px 80px;
     font-size: 18px;
     border-radius: 15px;
     outline:none;
-    border: 3px solid;
-    background: #fff url(Imagenes/icons8-búsqueda-24.png) no-repeat 2px center;
-    width: 5%;
+    border: none;
+    background: url(Imagenes/pikachu.PNG) no-repeat 2px center;
+    width: 100px;
     transition: all .5s;
+    height: 75px;
 }
 
 input.buscador:hover{
-    width: 230px;
+    width: 260px;
     background-color: rgb(250, 250, 249);
     border-color: rgb(236, 236, 9);
     box-shadow: 0px 0px 10px white, 0px 0px 20px rgb(200, 220, 20);
@@ -67,6 +68,7 @@ nav .buscar{
 
 nav ul li{
     list-style:none;
+    z-index: 3;
 }
 
 .lista li ul{
@@ -332,3 +334,66 @@ nav .tipos_de #VividTangerine:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
+/*Estilos cards*/
+#root{
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+#root .card{
+    
+    background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #201f1f 48%, #e91919 75%, #e91919 10%);
+    border: 5px solid #07F8DB;
+    border-radius: 150px;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    box-shadow: 0 20px 20px rgba(177, 189, 240, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+#root .card label{
+    position: relative;
+    top:30px;
+}
+
+#root .card:hover{
+    transform: translateY(-15px);
+    
+}
+
+#root .card div{
+    background-size: cover;
+    margin-top: 40px;
+    align-items: center;
+}
+
+#root .card .letras{
+    display: flex;
+    flex-direction: column;
+    margin-top: -15px;
+    
+}
+
+#root .card .type{
+    margin-top: -35px;
+}
+
+.card .letras label{
+    color: rgb(250, 250, 249);
+    font-size: 20px;
+}
+
+.card .type label{
+    font-size: 20px;
+}
+
