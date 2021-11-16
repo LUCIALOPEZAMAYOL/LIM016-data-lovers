@@ -348,7 +348,7 @@ nav .tipos_de #VividTangerine:hover{
 #root .card{
     
     background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #201f1f 48%, #e91919 75%, #e91919 10%);
-    border: 5px solid #07F8DB;
+    border: 5px solid #fff ;
     border-radius: 150px;
     width: 250px;
     height: 250px;
