@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color:#e0c068;
+    background-image: url(Imagenes/fondoPokemon.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -15,76 +15,66 @@ body{
     height: 100%;
     width: 100%;
 }
-
-header .titulo{ 
+header .titulo{
     height: 15%;
     width: 30%;
     padding-right: 35%;
     display: block;
 }
-
 header .logo{
     height: 10%;
     width: 10%;
     object-fit: cover;
     display: block;
 }
-
 /*Estilos para barra de navegación*/
 .box_navegador{
     margin-top: 1%;
     display: flex;
     justify-content: space-between;
 }
-
 nav .buscador{
     display: flex;
     justify-content: right;
-    padding: 9px 10px 9px 40px;
+    padding: 9px 10px 9px 80px;
     font-size: 18px;
     border-radius: 15px;
     outline:none;
-    border: 3px solid;
-    background: #fff url(Imagenes/icons8-búsqueda-24.png) no-repeat 2px center;
-    width: 5%;
+    border: none;
+    background: url(Imagenes/pikachu.PNG) no-repeat 2px center;
+    width: 100px;
     transition: all .5s;
+    height: 75px;
 }
-
 input.buscador:hover{
-    width: 230px;
+    width: 260px;
     background-color: rgb(250, 250, 249);
     border-color: rgb(236, 236, 9);
     box-shadow: 0px 0px 10px white, 0px 0px 20px rgb(200, 220, 20);
-} 
+}
 nav .buscar{
     padding-left: 20px;
     width: 230px;
     height: 80px;
 }
-
-
 /*Estilo para lista desplegable*/
-
 nav ul li{
     list-style:none;
+    z-index: 3;
 }
-
 .lista li ul{
     display: none;
     position: absolute;
     min-width: 140px;
 }
-
 .lista li:hover > .tipos_de{
     display: flex;
     flex-wrap: wrap;
     margin-top: 2px;
 }
-
 .lista li:hover > .ordenar_por{
     display: flex;
     flex-direction: column;
-
 }
 .lista li a{
     text-decoration: none;
@@ -97,20 +87,17 @@ nav ul li{
     width: 150px;
     border-radius: 15px;
     margin-right: 10px;
-    margin-left: 10px; 
+    margin-left: 10px;
     text-align: center;
 }
-
 .lista li .submenu{
     width: 80px;
     font-size: 15px;
     text-align: center;
-    
 }
 .lista > li{
     float: left;
 }
-
 .box-filtros{
     width:auto;
     height: 80px;
@@ -118,16 +105,13 @@ nav ul li{
     justify-content: center;
     display: inline-block;
 }
-
 nav .lista{
     margin:0%;
     padding: 0%;
 }
-
 .tipos_de{
     width: 300px;
 }
-
 /*Estilos botones de calcular y top 10*/
 nav .btns-calculo-top{
     margin-right: 0px;
@@ -136,7 +120,6 @@ nav .btns-calculo-top{
     display: flex;
     justify-content: center;
 }
-
 nav .btns{
     height: 40px;
     width: 90px;
@@ -148,23 +131,20 @@ nav .btns{
     cursor: pointer;
     box-shadow: 0px 0px 5px white, 0px 0px 15px rgb(220, 217, 20);
     margin-right: 20px;
-    margin-left: 10px; 
+    margin-left: 10px;
 }
-
 /*color para subitem tipos*/
 nav .tipos_de #RobRoy:hover{
-    background-color: #a8a878;
+    background-color: #A8A878;
     color: transparent;
     font-size: 20px;
     font-family: 'Atma', cursive;
     transform: scale(1.2);
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
-
 }
-
 nav .tipos_de #Firebrick:hover{
-    background-color: #c02038;
+    background-color: #C02038;
     color: transparent;
     font-size: 20px;
     font-family: 'Atma', cursive;
@@ -172,9 +152,8 @@ nav .tipos_de #Firebrick:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-
 nav .tipos_de #JordyBlue:hover{
-    background-color: #a890f0;
+    background-color: #A890F0;
     color: transparent;
     font-size: 20px;
     font-family: 'Atma', cursive;
@@ -182,9 +161,8 @@ nav .tipos_de #JordyBlue:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-
 nav .tipos_de #PigmentIndigo:hover{
-    background-color: #a040a0;
+    background-color: #A040A0;
     color: transparent;
     font-size: 20px;
     font-family: 'Atma', cursive;
@@ -192,9 +170,8 @@ nav .tipos_de #PigmentIndigo:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-
 nav .tipos_de #Calico:hover{
-    background-color: #e0c068;
+    background-color: #E0C068;
     color: transparent;
     font-size: 20px;
     font-family: 'Atma', cursive;
@@ -202,9 +179,8 @@ nav .tipos_de #Calico:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-
 nav .tipos_de #RawSienna:hover{
-    background-color: #b8a038;
+    background-color: #B8A038;
     color: transparent;
     font-size: 20px;
     font-family: 'Atma', cursive;
@@ -212,9 +188,8 @@ nav .tipos_de #RawSienna:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-
 nav .tipos_de #Atlantis:hover{
-    background-color: #a8b820;
+    background-color: #A8B820;
     color: transparent;
     font-size: 20px;
     font-family: 'Atma', cursive;
@@ -222,7 +197,6 @@ nav .tipos_de #Atlantis:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-
 nav .tipos_de #FreshEggplant:hover{
     background-color: #705898;
     color: transparent;
@@ -232,9 +206,8 @@ nav .tipos_de #FreshEggplant:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-
 nav .tipos_de #LightGrey:hover{
-    background-color: #b8b8d0;
+    background-color: #B8B8D0;
     color: transparent;
     font-size: 20px;
     font-family: 'Atma', cursive;
@@ -242,9 +215,8 @@ nav .tipos_de #LightGrey:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-
 nav .tipos_de #orange:hover{
-    background-color: #f08030;
+    background-color: #F08030;
     color: transparent;
     font-size: 20px;
     font-family: 'Atma', cursive;
@@ -252,9 +224,8 @@ nav .tipos_de #orange:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-
 nav .tipos_de #BrightTurquoise:hover{
-    background-color: #6890f0;
+    background-color: #6890F0;
     color: transparent;
     font-size: 20px;
     font-family: 'Atma', cursive;
@@ -262,9 +233,8 @@ nav .tipos_de #BrightTurquoise:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-
 nav .tipos_de #Green:hover{
-    background-color: #78c850;
+    background-color: #78C850;
     color: transparent;
     font-size: 20px;
     font-family: 'Atma', cursive;
@@ -272,9 +242,8 @@ nav .tipos_de #Green:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-
 nav .tipos_de #yelow:hover{
-    background-color: #f8d030;
+    background-color: #F8D030;
     color: transparent;
     font-size: 20px;
     font-family: 'Atma', cursive;
@@ -282,9 +251,8 @@ nav .tipos_de #yelow:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-
 nav .tipos_de #Meteorite:hover{
-    background-color: #f85888;
+    background-color: #F85888;
     color: transparent;
     font-size: 20px;
     font-family: 'Atma', cursive;
@@ -292,9 +260,8 @@ nav .tipos_de #Meteorite:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-
 nav .tipos_de #Sinbad:hover{
-    background-color: #98d8d8;
+    background-color: #98D8D8;
     color: transparent;
     font-size: 20px;
     font-family: 'Atma', cursive;
@@ -302,9 +269,8 @@ nav .tipos_de #Sinbad:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-
 nav .tipos_de #CornflowerBlue:hover{
-    background-color: #7038f8;
+    background-color: #7038F8;
     color: transparent;
     font-size: 20px;
     font-family: 'Atma', cursive;
@@ -312,7 +278,6 @@ nav .tipos_de #CornflowerBlue:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-
 nav .tipos_de #SlateGray:hover{
     background-color: #705848;
     color: transparent;
@@ -322,13 +287,63 @@ nav .tipos_de #SlateGray:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-
 nav .tipos_de #VividTangerine:hover{
-    background-color: #ee99ac;
+    background-color: #EE99AC;
     color: transparent;
     font-size: 20px;
     font-family: 'Atma', cursive;
     transform: scale(1.2);
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+/*Estilos cards*/
+#root{
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+#root .card{
+    background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #E0E0E0 26%, #201F1F 48%, #E91919 75%, #E91919 10%);
+    border: 5px solid #fff ;
+    border-radius: 150px;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    box-shadow: 0 20px 20px rgba(177, 189, 240, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+#root .card label{
+    position: relative;
+    top:30px;
+}
+#root .card:hover{
+    transform: translateY(-15px);
+}
+#root .card div{
+    background-size: cover;
+    margin-top: 40px;
+    align-items: center;
+}
+#root .card .letras{
+    display: flex;
+    flex-direction: column;
+    margin-top: -15px;
+}
+#root .card .type{
+    margin-top: -35px;
+}
+.card .letras label{
+    color: rgb(250, 250, 249);
+    font-size: 20px;
+}
+.card .type label{
+    font-size: 18px;
 }
