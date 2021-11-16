@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url(Imagenes/fondoPokemon.png);
+    background-color:#e0c068;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

@@ -27,7 +27,7 @@
               </ul>
             </li>
             <li><a href="#">Tipos </a>
-              <ul class="tipos_de">
+              <ul class="tipos_de" id="pedo">
                 <li ><a href="#" class="submenu" id="RobRoy">Normal</a></li>
                 <li ><a href="#" class="submenu" id="Firebrick">Lucha</a></li>
                 <li ><a href="#" class="submenu" id="JordyBlue">Volador</a></li>
@@ -58,7 +58,18 @@
     </nav>
     </header>
     
-    <div id="root"></div>
+    <template id="template-card">
+      <div>
+        <label id="num"></label>
+        <label id="name"></label>
+        <label id="type"></label>
+        <img>
+      </div>
+    </template>
+
+    <div id="root">
+    </div>
+    
     <script src="main.js" type="module"></script>
   </body>
 </html>
