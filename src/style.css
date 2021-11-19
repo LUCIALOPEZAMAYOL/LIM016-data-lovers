@@ -134,7 +134,16 @@ nav .btns{
     margin-left: 10px;
 }
 /*color para subitem tipos*/
-nav .tipos_de #RobRoy:hover{
+nav .tipos_de #todos:hover{
+    background-color: #4e4e4e;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+nav .tipos_de #normal:hover{
     background-color: #A8A878;
     color: transparent;
     font-size: 20px;
@@ -143,7 +152,7 @@ nav .tipos_de #RobRoy:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-nav .tipos_de #Firebrick:hover{
+nav .tipos_de #fighting:hover{
     background-color: #C02038;
     color: transparent;
     font-size: 20px;
@@ -152,7 +161,7 @@ nav .tipos_de #Firebrick:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-nav .tipos_de #JordyBlue:hover{
+nav .tipos_de #flying:hover{
     background-color: #A890F0;
     color: transparent;
     font-size: 20px;
@@ -161,7 +170,7 @@ nav .tipos_de #JordyBlue:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-nav .tipos_de #PigmentIndigo:hover{
+nav .tipos_de #poison:hover{
     background-color: #A040A0;
     color: transparent;
     font-size: 20px;
@@ -170,7 +179,7 @@ nav .tipos_de #PigmentIndigo:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-nav .tipos_de #Calico:hover{
+nav .tipos_de #ground:hover{
     background-color: #E0C068;
     color: transparent;
     font-size: 20px;
@@ -179,7 +188,7 @@ nav .tipos_de #Calico:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-nav .tipos_de #RawSienna:hover{
+nav .tipos_de #rock:hover{
     background-color: #B8A038;
     color: transparent;
     font-size: 20px;
@@ -188,7 +197,7 @@ nav .tipos_de #RawSienna:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-nav .tipos_de #Atlantis:hover{
+nav .tipos_de #bug:hover{
     background-color: #A8B820;
     color: transparent;
     font-size: 20px;
@@ -197,7 +206,7 @@ nav .tipos_de #Atlantis:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-nav .tipos_de #FreshEggplant:hover{
+nav .tipos_de #ghost:hover{
     background-color: #705898;
     color: transparent;
     font-size: 20px;
@@ -206,7 +215,7 @@ nav .tipos_de #FreshEggplant:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-nav .tipos_de #LightGrey:hover{
+nav .tipos_de #steel:hover{
     background-color: #B8B8D0;
     color: transparent;
     font-size: 20px;
@@ -215,7 +224,7 @@ nav .tipos_de #LightGrey:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-nav .tipos_de #orange:hover{
+nav .tipos_de #fire:hover{
     background-color: #F08030;
     color: transparent;
     font-size: 20px;
@@ -224,7 +233,7 @@ nav .tipos_de #orange:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-nav .tipos_de #BrightTurquoise:hover{
+nav .tipos_de #water:hover{
     background-color: #6890F0;
     color: transparent;
     font-size: 20px;
@@ -233,7 +242,7 @@ nav .tipos_de #BrightTurquoise:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-nav .tipos_de #Green:hover{
+nav .tipos_de #grass:hover{
     background-color: #78C850;
     color: transparent;
     font-size: 20px;
@@ -242,7 +251,7 @@ nav .tipos_de #Green:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-nav .tipos_de #yelow:hover{
+nav .tipos_de #electric:hover{
     background-color: #F8D030;
     color: transparent;
     font-size: 20px;
@@ -251,7 +260,7 @@ nav .tipos_de #yelow:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-nav .tipos_de #Meteorite:hover{
+nav .tipos_de #psychic:hover{
     background-color: #F85888;
     color: transparent;
     font-size: 20px;
@@ -260,7 +269,7 @@ nav .tipos_de #Meteorite:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-nav .tipos_de #Sinbad:hover{
+nav .tipos_de #ice:hover{
     background-color: #98D8D8;
     color: transparent;
     font-size: 20px;
@@ -269,7 +278,7 @@ nav .tipos_de #Sinbad:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-nav .tipos_de #CornflowerBlue:hover{
+nav .tipos_de #dragon:hover{
     background-color: #7038F8;
     color: transparent;
     font-size: 20px;
@@ -278,7 +287,7 @@ nav .tipos_de #CornflowerBlue:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-nav .tipos_de #SlateGray:hover{
+nav .tipos_de #dark:hover{
     background-color: #705848;
     color: transparent;
     font-size: 20px;
@@ -287,7 +296,7 @@ nav .tipos_de #SlateGray:hover{
     padding: 5px 5px 5px 5px;
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
-nav .tipos_de #VividTangerine:hover{
+nav .tipos_de #fairy:hover{
     background-color: #EE99AC;
     color: transparent;
     font-size: 20px;

@@ -1,9 +1,17 @@
-// estas funciones son de ejemplo
+//Funcionalodad de filtrar pokemon por tipo
+  export const filtradoTipo = (pokemones, tipo) => {
+      let pokemonesFiltrados = pokemones.filter((pokemon)=>{
+        for(let i=0; i<pokemon.type.length; i++){
+          if(pokemon.type[i]===tipo) {
+            return pokemon;
+          }
+        }
+      });
+      return pokemonesFiltrados; 
+  };
 
-export const example = () => {
-  return 'example';
-};
+//Funcionalidad de ordenar pokemon
 
-export const anotherExample = () => {
+export const ordenarPor = () => {
   return 'OMG';
 };
