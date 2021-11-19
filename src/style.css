@@ -316,12 +316,7 @@ nav .tipos_de #fairy:hover{
     margin: auto;
 }
 #root .card{
-<<<<<<< HEAD
     background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #E0E0E0 26%, #201F1F 48%, #E91919 75%, #E91919 10%);
-=======
-    
-    background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #201f1f 48%, #e91919 75%, #e91919 10%);
->>>>>>> 0a38d3205ff2338842ab080132c26fadfecd8c52
     border: 5px solid #fff ;
     border-radius: 150px;
     width: 250px;
