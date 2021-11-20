@@ -70,7 +70,6 @@ nav ul li{
 .lista li:hover > .tipos_de{
     display: flex;
     flex-wrap: wrap;
-    margin-top: 2px;
 }
 .lista li:hover > .ordenar_por{
     display: flex;
@@ -90,7 +89,18 @@ nav ul li{
     margin-left: 10px;
     text-align: center;
 }
+.lista li #todos{
+    width: 80px;
+    font-size: 15px;
+    text-align: center;
+}
+
 .lista li .submenu{
+    width: 80px;
+    font-size: 15px;
+    text-align: center;
+}
+.lista li .ordenar{
     width: 80px;
     font-size: 15px;
     text-align: center;
@@ -133,9 +143,21 @@ nav .btns{
     margin-right: 20px;
     margin-left: 10px;
 }
+
+/*color para subitem tipos*/
+nav .ordenar_por .ordenar:hover{
+    background-color: #b4b3b3;
+    color: transparent;
+    font-size: 20px;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 5px 5px 5px 5px;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
 /*color para subitem tipos*/
 nav .tipos_de #todos:hover{
-    background-color: #4e4e4e;
+    background-color: #b4b3b3;
     color: transparent;
     font-size: 20px;
     font-family: 'Atma', cursive;
