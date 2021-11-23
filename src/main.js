@@ -1,15 +1,16 @@
-import {filtradoTipo, ordenarPokemones} from './data.js';
+import {filtradoTipo, ordenarPokemones,buscarPokemonPorNombre} from './data.js';
 /*import buscarPokemon from './data.js';*/
 import data from './data/pokemon/pokemon.js';
 
 
 //Funcionalidad para mostrar los pokemon en cards
 
-const cards = document.querySelector("#root");
-const template = document.getElementById("template-card").content;
-const fragmento = document.createDocumentFragment();
 
 const mostrarCards = (pokemones)=>{
+    const cards = document.querySelector("#root");
+    const template = document.getElementById("template-card").content;
+    const fragmento = document.createDocumentFragment();
+    
     cards.innerHTML='';
     pokemones.forEach(pokemon =>{
         template.querySelector("img").setAttribute("src",pokemon.img);
@@ -17,12 +18,12 @@ const mostrarCards = (pokemones)=>{
         template.querySelector("#name").textContent=pokemon.name;
         template.querySelector("#type").textContent = '';
         pokemon.type.forEach(type => { 
-            template.querySelector("#type").textContent += ' ' + type;
+            template.querySelector("#type").textContent += '  '  + type;
         }); 
-      let clone = document.importNode(template,true);
+        let clone = document.importNode(template,true);
         fragmento.appendChild(clone);
-      });
-      cards.appendChild(fragmento);
+    });
+    cards.appendChild(fragmento);
 }
 mostrarCards(data.pokemon);
     
@@ -35,37 +36,24 @@ const submenus=document.querySelectorAll('.submenu');
             mostrarCards(pokemonesFiltrados);
         })
     };
-    const todos= document.getElementById('todos');
-    todos.addEventListener('click', ()=>{
-        mostrarCards(data.pokemon);
-    });
 
 //Funcionalidad para ordenar los pokemon
-
-/*const sortData=document.querySelectorAll('.ordenar');
+const sortData=document.querySelectorAll('.ordenar');
 for(let i=0; i<sortData.length; i++){
     sortData[i].addEventListener('click', ()=>{
-        let nombre=sortData[i];
-        let pokemonesOrdenados = ordenarPokemones(data.pokemon, nombre);
-        mostrarCards(pokemonesOrdenados);
+        let ordenarPor=sortData[i].id;
+        var pokes = ordenarPokemones(data.pokemon,'name', ordenarPor);
+        mostrarCards(pokes);
     })
-};*/
-/*document.getElementById('a-z').addEventListener('click', ()=>{
-    
-    })
-    mostrarCards(pokemonesOrdenados);
-})*/
+};
 
-document.getElementById('z-a').addEventListener('click', ()=>{
-    const pokemonesOrdenados= data.pokemon.sort((a,b)=>{
-        if(a.name < b.name){
-            return 1;
-        }
-        if(a.name >b.name){
-            return -1;
-        }
-        return 0;
-    })
-    mostrarCards(pokemonesOrdenados);
-})
+//Mostrar todos los pokemon
+const todos= document.getElementById('btn-all');
+todos.addEventListener('click', function(){
+    mostrarCards(data.pokemon);
+});
 
+
+//Buscar pokemones
+let arregloPokes= document.querySelectorAll('.card');
+buscarPokemonPorNombre(arregloPokes);

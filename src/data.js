@@ -10,37 +10,37 @@
       return pokemonesFiltrados; 
   };
 
-//Funcionalidad de ordenar pokemon
-
-/*export const ordenarPokemones = (dataPokemon,nombre) => {
-    let pokemonesOrdenados=[];
-    if(nombre==='name'){
-      if(ordenar==='a-z'){
-        pokemonesOrdenados=data.pokemon.sort(function(a,b){
-          if(a.name > b.name) return 1;
-          if(a.name === b.name) return 0;
+//Funcionalidad de ordenar el arreglo de pokemones
+      export const ordenarPokemones = (pokemones, sortBy, sortOrder) => {
+      let arrayPoke=[...pokemones];
+      if(sortOrder==='a-z'){
+        return arrayPoke.sort(function (a,b){
+          if(a[sortBy]>b[sortBy]) return 1; 
+          if(a[sortBy]===b[sortBy]) return 0;
           return -1;
         });
-      } else {
-        pokemonesOrdenados=data.pokemon(function(a,b){
-          if(a.name>b.name) return 1;
-          if(a.name===b.name)return 0;
+      }else{
+        return arrayPoke.sort(function (a,b){
+          if(a[sortBy]<b[sortBy]) return 1; 
+          if(a[sortBy]===b[sortBy]) return 0;
           return -1;
-        })
-      }
-      }};*/
+        });
+      }      
+    };
 
-      export const filtradoTipo = (datapokemones, nombre) => {
+    //Buscar por nombre 
+    export const buscarPokemonPorNombre = (cards) => { 
+      document.addEventListener('keyup',(e)=>{        
+        cards.forEach(card => {
+            let nombrePokemon = card.querySelector('#name').textContent;
+            if(nombrePokemon.includes(e.target.value.toLowerCase())){
+              card.style.display = 'block'
+            }else{
+              card.style.display = 'none'
+            }
+          });
+      });
+    };
 
-      const pokemonesOrdenados= datapokemones.sort((a,b)=>{
-        if(a.nombre < b.nombre){
-            return -1;
-        }
-        if(a.nombre >b.nombre){
-            return 1;
-        }
-        return 0;
-
-      }
-      )};
+     
 

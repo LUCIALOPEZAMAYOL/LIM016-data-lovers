@@ -26,7 +26,6 @@
             </li>
             <li><a href="#">Tipos </a>
               <ul class="tipos_de">
-                <li ><a href="#" id="todos">Todos</a></li>
                 <li ><a href="#" class="submenu" id="normal">Normal</a></li>
                 <li ><a href="#" class="submenu" id="fighting">Lucha</a></li>
                 <li ><a href="#" class="submenu" id="flying">Volador</a></li>
@@ -50,32 +49,28 @@
           </ul>
         </section> 
       
-      <section class="btns-calculo-top">
+      <section class="btns-calculo-top-all">
+        <button class="btns" id="btn-all">All Pokemon</button>
         <button class="btns" id="btn-calcular">Calcular</button>
         <button class="btns" id="btn-top">Top 10</button>
       </section>
     </nav>
     </header>
     
-  
-
     <template id="template-card">
       <div class="card">
         <div class="letras">
-        <label id="num" ></label>
-        <label id="name"></label>
+          <label id="num" ></label>
+          <label id="name"></label>
         </div>
         <div>
-        <img>
+          <img>
         </div>
         <div class="type">
-        <label id="type"></label>
-        </div>
-        
+          <label id="type"></label>
+        </div>        
       </div>
     </template>
-
-
     <div id="root">
     </div>
     <script src="main.js" type="module"></script>
