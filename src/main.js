@@ -59,13 +59,15 @@ buscarPokemonPorNombre(arregloPokes);
 
 //Mostrar información en modal
 
+let modalCard= document.querySelector(".modal-card");
+let modal= document.querySelector(".modal");
+
 arregloPokes.forEach(element => {
     element.addEventListener('click', (e)=>{
         data.pokemon.forEach(function(pokes){
             let pokeElemento=element.querySelector('#name').textContent;
 
             if(pokes.name=== pokeElemento){
-                console.log(pokeElemento);
                 let modalgeneral= document.querySelector('.modal');
                 let templateModal=document.getElementById('modal-container').content;
                 templateModal.querySelector("#numModal").textContent=pokes.num;
@@ -85,7 +87,12 @@ arregloPokes.forEach(element => {
                 let clone = document.importNode(templateModal,true);
                 modalgeneral.textContent=' ';
                 modalgeneral.appendChild(clone);
+
+                    document.getElementsByClassName('modal')[0].style.display="flex";
+                  
             }
+            
         }); 
+        
     });
 });
