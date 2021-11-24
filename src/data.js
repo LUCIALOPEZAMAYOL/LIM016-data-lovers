@@ -32,7 +32,7 @@
     export const buscarPokemonPorNombre = (cards) => { 
       document.addEventListener('keyup',(e)=>{        
         cards.forEach(card => {
-            let nombrePokemon = card.querySelector('#name').textContent;
+            let nombrePokemon = card.querySelector('#name').textContent; //obtener el contenido de un elemento html
             if(nombrePokemon.includes(e.target.value.toLowerCase())){
               card.style.display = 'block'
             }else{

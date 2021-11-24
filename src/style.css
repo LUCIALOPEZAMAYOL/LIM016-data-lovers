@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(rgb(5, 7, 12,0.3), rgba(5,7,12,0.3)), url(Imagenes/fondoPoke.png);
+    background-image: linear-gradient(rgba(32, 32, 32, 0.3), rgba(32, 32, 32, 0.3)), url(Imagenes/header1.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -11,7 +11,7 @@ body{
 
 /* Estilos para encabezado*/
 .header .imagenes  {
-    background: #54A6F2;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
     display: flex;
     justify-content: space-between;
     height: 100%;
@@ -375,3 +375,19 @@ nav .tipos_de #fairy:hover{
 .card .type label{
     font-size: 18px;
 }
+
+/*Estilos para modal*/
+
+/*.modal{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    
+  }*/
