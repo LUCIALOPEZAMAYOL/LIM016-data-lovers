@@ -5,6 +5,7 @@
     <title>POKEDATA</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Atma:wght@600&family=Benne&family=Black+And+White+Picture&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
   </head>
   <body>
     <header class="header">
@@ -78,12 +79,30 @@
 
     <template id="modal-container">
       <div class="modal-card">
-        <label id="numModal"></label>
-        <label id="nameModal"></label>
+        <div class="encabezado">
+          <label id="nameModal"></label>
+          <label id="numModal"></label>
+        </div>
+
         <label id="nameGeneration"></label>
-        <label id="about"></label>
-        <label id="resistant"></label>
-        <label id="weaknesses"></label>
+
+        <div class="descripcion">
+          <label id="about"></label>
+        </div>
+
+        <div class="poderes">
+          <div class="listResis">
+            <label class="resistencia">Resistant</label><br>
+            <label id="resistant"></label>
+          </div>
+            
+          <div class="listdebil">
+            <label class="debilidad">Weaknesses</label><br>
+            <label id="weaknesses"></label>
+          </div>
+        </div>
+
+        
         <label id="height"></label>
         <label id="weight"></label>        
       </div>

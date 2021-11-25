@@ -70,17 +70,17 @@ arregloPokes.forEach(element => {
             if(pokes.name=== pokeElemento){
                 let modalgeneral= document.querySelector('.modal');
                 let templateModal=document.getElementById('modal-container').content;
+                templateModal.querySelector("#nameModal").textContent=pokes.name.toUpperCase();
                 templateModal.querySelector("#numModal").textContent=pokes.num;
-                templateModal.querySelector("#nameModal").textContent=pokes.name;
-                templateModal.querySelector("#nameGeneration").textContent="Región: " + pokes.generation.name;
+                templateModal.querySelector("#nameGeneration").textContent="Region: " + pokes.generation.name;
                 templateModal.querySelector("#about").textContent=pokes.about;
                 templateModal.querySelector("#resistant").textContent=' ';
                 pokes.resistant.forEach(resistencia => { 
-                    templateModal.querySelector("#resistant").textContent += '  '  + resistencia;
+                    templateModal.querySelector("#resistant").textContent +=' '  + resistencia;
                 });
                 templateModal.querySelector("#weaknesses").textContent=' ';
                 pokes.weaknesses.forEach(debilidad => { 
-                    templateModal.querySelector("#weaknesses").textContent += '  '  + debilidad;
+                    templateModal.querySelector("#weaknesses").textContent +=' '  + debilidad;
                 }); 
                 templateModal.querySelector("#height").textContent="Height: " + pokes.size.height;
                 templateModal.querySelector("#weight").textContent="Weight: " + pokes.size.weight;
@@ -88,11 +88,14 @@ arregloPokes.forEach(element => {
                 modalgeneral.textContent=' ';
                 modalgeneral.appendChild(clone);
 
-                    document.getElementsByClassName('modal')[0].style.display="flex";
-                  
+                document.getElementsByClassName('modal')[0].style.display="flex";
+
+                modalgeneral.addEventListener('click', e =>{
+                    if(e.target===modalgeneral){
+                        document.getElementsByClassName('modal')[0].style.display="none";
+                    }
+                  }); 
             }
-            
         }); 
-        
     });
 });

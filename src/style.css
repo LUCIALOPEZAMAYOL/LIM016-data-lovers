@@ -140,7 +140,7 @@ nav .btns{
     margin-left: 10px;
 }
 
-/*color para subitem tipos*/
+/*color para subitem ordenar*/
 nav .ordenar_por .ordenar:hover{
     background-color: #b4b3b3;
     color: transparent;
@@ -151,7 +151,7 @@ nav .ordenar_por .ordenar:hover{
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
 
-/*color para subitem tipos*/
+/*color para boton todos*/
 nav .tipos_de #todos:hover{
     background-color: #b4b3b3;
     color: transparent;
@@ -381,7 +381,7 @@ nav .tipos_de #fairy:hover{
     display: none;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.829);
     height: 100vh;
     width: 100vw;
     position: fixed;
@@ -389,16 +389,115 @@ nav .tipos_de #fairy:hover{
     left: 0;
     padding: 20px;
     z-index: 4;
-    
   }
-  
+  .modal::before{          /*pseudoelemtos*/
+    content: url(Imagenes/iconoCerrar.png);
+    position: absolute;
+    top: 1vw;
+    right:23vw;
+  }
   .modal-card{
-    background-image: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);
-    width: 500px;
-    padding: 20px 40px;
-    border-radius: 5px;
-    margin-right: 50px;
+    background-image: url(Imagenes/Pokedex2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90%;
+    width: 90%;
+    text-align: center;
   }
+
+  /*Estilos para contenido de modal*/
+  .modal .modal-card .encabezado{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    margin: auto;
+    margin-top: 5vw;
+  }
+
+  .modal-card .encabezado label{
+      font-size: 3vw;
+      font-family: 'Atma';
+      color: chocolate;
+      font-weight: bold;
+  }
+
+  .modal-card #nameModal{
+    margin-left: 10vw;
+  }
+
+  .modal-card #nameGeneration{
+    font-size: 2vw;
+    font-family: 'Atma';
+    margin-right: 8vw;
+    font-weight: bold;
+  }
+
+  .modal-card .descripcion{
+    display: flex;
+    text-align: center;
+    width: 45vw;
+    height: 6vw;
+    background-color: #ffffffcc;
+    border-radius: 1vw;
+    margin-left: 18vw;
+    padding: 1%;
+    border: dashed  #0B69A3;
+    margin-top: 1vw;
+  }
+
+  .modal-card .descripcion #about{
+      font-size: 1vw;
+      font-family: 'Roboto Mono';
+      font-weight: 900;
+  }
+.poderes{
+    display: flex;
+    justify-content: center;
+}
+
+.poderes>div{
+    margin: 20px;
+    margin-right: 10%;
+    font-family: 'Roboto Mono';
+    font-weight: 900;
+    font-size: 1vw;
+
+}
+/*.modal-card .resistencia{
+    font-family: 'Roboto Mono';
+    font-weight: 900;
+    margin-right: 40vw;
+}
+
+.modal-card .listResis{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    font-family: 'Roboto Mono';
+    font-weight: 900;
+    font-size: 13px;
+    margin-left: 2vw;
+}
+  .modal-card .debilidad{
+    font-family: 'Roboto Mono';
+    font-weight: 900;
+    display: flex;
+}
+
+.modal-card .listdebil{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    font-family: 'Roboto Mono';
+    font-weight: 900;
+    font-size: 13px;
+    margin-left: 2vw;
+}*/
+
+
+
+
 
 
 
