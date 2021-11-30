@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>POKEDATA</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@600&family=Benne&family=Black+And+White+Picture&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@600&family=Benne&family=Black+And+White+Picture&family=Grandstander&family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js" integrity="sha512-CWVDkca3f3uAWgDNVzW+W4XJbiC3CH84P2aWZXj+DqI6PNbTzXbl1dIzEHeNJpYSn4B6U8miSZb/hCws7FnUZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body>
     <header class="header">
@@ -52,10 +52,18 @@
       
       <section class="btns-calculo-top-all">
         <button class="btns" id="btn-all">All Pokemon</button>
-        <button class="btns" id="btn-calcular">Calcular</button>
-        <button class="btns" id="btn-top">Top 10</button>
+        <button class="btns" id="btnComparar">Calcular</button>
+        
       </section>
+         
+      <div class="estadistica">
+        <button id="btnAtras" class="atras">Regresar</button>
+        <select name="" id="selectUno"></select>
+        <select name="" id="selectDos"></select>
+        <button id="btnCalcular" class="calcular">Calcular</button>
+      </div>
     </nav>
+
     </header>
     
     <template id="template-card">
@@ -89,27 +97,30 @@
         <div class="descripcion">
           <label id="about"></label>
         </div>
-
-        <div class="poderes">
-          <div class="listResis">
-            <label class="resistencia">Resistant</label><br>
-            <label id="resistant"></label>
+        <div class="resis-debil-peso-altura">
+          <div class="poderes">
+            <div class="listResis">
+              <label class="resistencia">Resistant</label><br>
+              <label id="resistant"></label>
+            </div>
+      
+            <div class="listdebil">
+              <label class="debilidad">Weaknesses</label><br>
+              <label id="weaknesses"></label>
+            </div>
           </div>
-            
-          <div class="listdebil">
-            <label class="debilidad">Weaknesses</label><br>
-            <label id="weaknesses"></label>
+
+          <div class="peso-altura">
+            <label id="height"></label>
+            <label id="weight"></label>
           </div>
         </div>
-
-        
-        <label id="height"></label>
-        <label id="weight"></label>        
       </div>
     </template>
 
     <div class="modal">
     </div>
+    
     <script src="main.js" type="module"></script>
   </body>
 </html>

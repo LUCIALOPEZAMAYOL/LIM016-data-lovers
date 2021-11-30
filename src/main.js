@@ -1,72 +1,16 @@
-import {filtradoTipo, ordenarPokemones,buscarPokemonPorNombre} from './data.js';
+import {filtradoTipo, ordenarPokemones,buscarPokemonPorNombre, compararPokemones, searchPokemon} from './data.js';
 /*import buscarPokemon from './data.js';*/
 import data from './data/pokemon/pokemon.js';
 
-
+//Mostrar información en modal
 //Funcionalidad para mostrar los pokemon en cards
 
-const mostrarCards = (pokemones)=>{
-    const cards = document.querySelector("#root");
-    const template = document.getElementById("template-card").content;
-    const fragmento = document.createDocumentFragment();
-    
-    cards.innerHTML='';
-    pokemones.forEach(pokemon =>{
-        template.querySelector("img").setAttribute("src",pokemon.img);
-        template.querySelector("#num").textContent = pokemon.num;
-        template.querySelector("#name").textContent = pokemon.name;
-        template.querySelector("#type").textContent = '';
-        pokemon.type.forEach(type => { 
-            template.querySelector("#type").textContent += '  '  + type;
-        }); 
-        let clone = document.importNode(template,true);
-        fragmento.appendChild(clone);
-    });
-    cards.appendChild(fragmento);
-}
-mostrarCards(data.pokemon);
-    
-// Funcionalidad para filtrar pokemon por su tipo
-const submenus=document.querySelectorAll('.submenu');
-    for(let i=0; i<submenus.length; i++){
-        submenus[i].addEventListener('click', ()=>{
-            let tipo=submenus[i].id;
-            let pokemonesFiltrados= filtradoTipo(data.pokemon,tipo);
-            mostrarCards(pokemonesFiltrados);
-        })
-    };
-
-//Funcionalidad para ordenar los pokemon
-const sortData=document.querySelectorAll('.ordenar');
-for(let i=0; i<sortData.length; i++){
-    sortData[i].addEventListener('click', ()=>{
-        let ordenarPor=sortData[i].id;
-        var pokes = ordenarPokemones(data.pokemon,'name', ordenarPor);
-        mostrarCards(pokes);
-    })
-};
-
-//Mostrar todos los pokemon
-const todos= document.getElementById('btn-all');
-todos.addEventListener('click', function(){
-    mostrarCards(data.pokemon);
-});
-
-
-//Buscar pokemones
-let arregloPokes= document.querySelectorAll('.card');
-buscarPokemonPorNombre(arregloPokes);
-
-//Mostrar información en modal
-
-let modalCard= document.querySelector(".modal-card");
-let modal= document.querySelector(".modal");
-
-arregloPokes.forEach(element => {
+let arregloPokesCards= [];
+const modalPokes = () => {
+    arregloPokesCards.forEach(element => {
     element.addEventListener('click', (e)=>{
         data.pokemon.forEach(function(pokes){
             let pokeElemento=element.querySelector('#name').textContent;
-
             if(pokes.name=== pokeElemento){
                 let modalgeneral= document.querySelector('.modal');
                 let templateModal=document.getElementById('modal-container').content;
@@ -99,3 +43,179 @@ arregloPokes.forEach(element => {
         }); 
     });
 });
+}
+
+modalPokes();
+
+const mostrarCards = (pokemones)=>{
+    const cards = document.querySelector("#root");
+    const template = document.getElementById("template-card").content;
+    const fragmento = document.createDocumentFragment();
+    
+    cards.innerHTML='';
+    pokemones.forEach(pokemon =>{
+        template.querySelector("img").setAttribute("src",pokemon.img);
+        template.querySelector("#num").textContent = pokemon.num;
+        template.querySelector("#name").textContent = pokemon.name;
+        template.querySelector("#type").textContent = '';
+        pokemon.type.forEach(type => { 
+            template.querySelector("#type").textContent += '  '  + type;
+        }); 
+        let clone = document.importNode(template,true);
+        fragmento.appendChild(clone);
+    });
+    cards.appendChild(fragmento);
+    arregloPokesCards= document.querySelectorAll('.card');
+    modalPokes();
+}
+mostrarCards (data.pokemon)
+
+    
+// Funcionalidad para filtrar pokemon por su tipo
+const submenus=document.querySelectorAll('.submenu');
+    for(let i=0; i<submenus.length; i++){
+        submenus[i].addEventListener('click', ()=>{
+            let tipo=submenus[i].id;
+            let pokemonesFiltrados= filtradoTipo(data.pokemon,tipo);
+            mostrarCards(pokemonesFiltrados);
+        })
+    };
+
+//Funcionalidad para ordenar los pokemon
+const sortData=document.querySelectorAll('.ordenar');
+for(let i=0; i<sortData.length; i++){
+    sortData[i].addEventListener('click', ()=>{
+        let ordenarPor=sortData[i].id;
+        var pokes = ordenarPokemones(data.pokemon,'name', ordenarPor);
+        mostrarCards(pokes);
+    })
+};
+
+//Mostrar todos los pokemon
+const todos= document.getElementById('btn-all');
+todos.addEventListener('click', function(){
+    mostrarCards(data.pokemon);
+});
+
+
+//Buscar pokemones
+let search= document.querySelector('.buscador');
+search.addEventListener('keyup', (e)=>{
+    let inputSearch= e.target.value.toLowerCase();
+    let arregloPokes= document.querySelectorAll('.card');
+    buscarPokemonPorNombre(inputSearch,arregloPokes);
+})
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* */
+
+
+
+const btnComparar = document.querySelector('#btnComparar');
+btnComparar.addEventListener('click', () => {  
+  document.querySelector('.buscar').classList.add('ocultar');
+  document.querySelector('.buscar').classList.remove('desocultar');
+  document.querySelector('.box-filtros').classList.add('ocultar');
+  document.querySelector('.box-filtros').classList.remove('desocultar');
+  document.querySelector('.btns-calculo-top-all').classList.add('ocultar');
+  document.querySelector('.btns-calculo-top-all').classList.remove('desocultar');
+  document.querySelector('.estadistica').classList.add('desocultar');
+  document.querySelector('.estadistica').classList.remove('ocultar');
+  
+mostrarCards(data.pokemon);   // Volver a mostrar a todos los pokemones
+
+document.querySelector('#selectUno').value = 'Seleccione Pokemon'; // Volver a mostrar a todos los nombres de pokemones
+document.querySelector('#selectDos').value = 'Seleccione Pokemon';
+
+});
+
+
+const btnAtras = document.querySelector('#btnAtras');
+btnAtras.addEventListener('click', () => {  
+  document.querySelector('.buscar').classList.remove('ocultar');
+  document.querySelector('.buscar').classList.add('desocultar');
+  document.querySelector('.box-filtros').classList.remove('ocultar');
+  document.querySelector('.box-filtros').classList.add('desocultar');
+  document.querySelector('.btns-calculo-top-all').classList.remove('ocultar');
+  document.querySelector('.btns-calculo-top-all').classList.add('desocultar');
+  document.querySelector('.estadistica').classList.add('ocultar');
+
+mostrarCards(data.pokemon);   // Volver a mostrar a todos los pokemones
+});
+
+const btnCalcular = document.querySelector('#btnCalcular');
+btnCalcular.addEventListener('click', () => {   
+  const txtPoke1 = document.querySelector('#selectUno').value; // Nombre Pokemon 1
+  const txtPoke2 = document.querySelector('#selectDos').value; // Nombre Pokemon 2
+  mostrarCards(compararPokemones(data.pokemon,txtPoke1, txtPoke2)); // Card Pokemon mas poderoso
+
+  const dataPoke1 = loadPokemonSelect(searchPokemon(data.pokemon,txtPoke1)); // Stats Pokemon 1
+  const dataPoke2 = loadPokemonSelect(searchPokemon(data.pokemon,txtPoke2)); // Stats Pokemon 2
+  manupilarGrafico(txtPoke1,txtPoke2,dataPoke1,dataPoke2);  // Paso datos 
+});
+
+
+
+/*Cargar Select con los nombres de los pokemones*/
+const loadSelect = (listaPoke) => { // Recibe un arreglo con los datos de los pokemones
+    let templateList = '';
+    templateList = '<option disabled selected value="Seleccione Pokemon">Seleccione Pokemon</option>';  
+    listaPoke.forEach((datos) => {   
+      const print = `<option value="${datos.name}">${datos.name}</option>`;
+      templateList += print;    // Llena los selects con todos los nombres de Pokemon 
+    });
+    document.querySelector('#selectUno').innerHTML = templateList;
+    document.querySelector('#selectDos').innerHTML = templateList;   
+  };
+  loadSelect(data.pokemon); 
+
+  const loadPokemonSelect = (poke) => {
+    const arrayPoke = [];
+    poke.forEach((datos) => {
+      const ataque = parseInt(datos.stats['base-attack']);
+      const defensa = parseInt(datos.stats['base-defense']);
+      const stamina = parseInt(datos.stats['base-stamina']);
+      const cp = parseInt(datos.stats['max-cp']);
+      const hp = parseInt(datos.stats['max-hp']);
+      arrayPoke.push(ataque,defensa,stamina,cp,hp);
+    }); 
+    return arrayPoke; 
+  };
+
+  /* Grafica - Estadistica */
+  
+  function Grafico(grafica,txtPoke1,txtPoke2,dataPoke1,dataPoke2){
+    //para que el eslint no lo lea al chart.
+    // eslint-disable-next-line    
+    const chart = new Chart (grafica,{  
+      type: 'bar',
+      data:{
+        labels: ['Base-Attack', 'Base-Defense', 'Base-Stamina', 'Max-CP', 'Max-HP'], // Eje x  
+        datasets:[
+          {
+            label: txtPoke1.toUpperCase(),  // Leyenda (nombre Pokemon 1)
+            data: dataPoke1, // Eje y    (stats Pokemon 1)       
+            backgroundColor: 'rgb(66,134,244)',  // Color blue            
+          },
+          {
+            label: txtPoke2.toUpperCase(),  // Leyenda  (nombre Pokemon 2)
+            data: dataPoke2,  // Eje y  (stats Pokemon 2)
+            backgroundColor: 'rgb(229,89,50)',  // Color orange       
+          }       
+        ]     
+      },
+    });
+  }
+
+  function manupilarGrafico(txtPoke1,txtPoke2,dataPoke1,dataPoke2){
+    const container = document.querySelector('#root');
+    const canvas = '<canvas id="grafica" width="400" height="300"></canvas>';  
+    container.innerHTML += canvas;
+    const grafica = document.getElementById('grafica').getContext('2d'); // un contexto de renderizado de dos dimensiones
+    Grafico(grafica,txtPoke1,txtPoke2,dataPoke1,dataPoke2);
+    console.log('grafico: ' + grafica)
+  }
+  
+  
+   /* Select pokemones: Estadisticas */
+  
