@@ -29,18 +29,56 @@
     };
 
     //Buscar por nombre 
-    export const buscarPokemonPorNombre = (cards) => { 
-      document.addEventListener('keyup',(e)=>{        
-        cards.forEach(card => {
-            let nombrePokemon = card.querySelector('#name').textContent; //obtener el contenido de un elemento html
-            if(nombrePokemon.includes(e.target.value.toLowerCase())){
-              card.style.display = 'block'
-            }else{
-              card.style.display = 'none'
-            }
-          });
-      });
+    export const buscarPokemonPorNombre = (search,cards)=>{
+      console.log(cards);
+        cards.forEach(element => {
+      
+          let nombrePokemon = element.querySelector('#name').textContent;
+          if(nombrePokemon.includes(search)){
+            element.style.display = 'block'
+          }else{
+            element.style.display = 'none'
+          }
+        });
     };
 
-     
+//Función calcular
+
+    export const compararPokemones = (data, pokemonUno, pokemonDos) => {
+      let suma1 = '';
+      let suma2 = '';
+      const poke1 = [];
+      const poke2 = [];
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].name == pokemonUno) {
+          suma1 = parseInt(data[i].stats['base-attack']) + parseInt(data[i].stats['base-defense']) +
+            parseInt(data[i].stats['base-stamina']) + parseInt(data[i].stats['max-cp']) +
+            parseInt(data[i].stats['max-hp']);  //suma sus stats
+          poke1.push(data[i]);  // Guarda la data del pokemon1
+        }
+        if (data[i].name == pokemonDos) {
+          suma2 = parseInt(data[i].stats['base-attack']) + parseInt(data[i].stats['base-defense']) +
+              parseInt(data[i].stats['base-stamina']) + parseInt(data[i].stats['max-cp']) +
+              parseInt(data[i].stats['max-hp']);  //suma sus stats          
+          poke2.push(data[i]);  // Guarda la data del pokemon2
+        }  
+      }
+      if (suma1 > suma2){ 
+        return poke1; // Si la suma de stats del (pokemon1 > pokemon2) -> mas poderoso (pokemon1)
+      }else {
+        return poke2; // Si la suma de stats del (pokemon2 > pokemon1) -> mas poderoso (pokemon2)
+      }
+    };
+
+
+
+    export const searchPokemon = (data, namePokemon) => {
+      const arrayPoke = [];
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].name == namePokemon) {
+          arrayPoke.push(data[i]); 
+        }   
+      }
+      return arrayPoke; 
+    };
 

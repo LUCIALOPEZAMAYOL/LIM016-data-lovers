@@ -6,7 +6,6 @@ body{
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-
 }
 
 /* Estilos para encabezado*/
@@ -26,8 +25,8 @@ header .titulo{
 header .logo{
     height: 25vw;
     width: 100vw;
-    
 }
+
 /*Estilos para barra de navegación*/
 .box_navegador{
     margin-top: 1%;
@@ -47,7 +46,7 @@ nav .buscador{
     transition: all .5s;
     height: 75px;
 } 
-input.buscador:hover{
+input.buscador:hover, input.buscador:focus, input.buscador:active{
     width: 260px;
     background-color: rgb(250, 250, 249);
     border-color: rgb(236, 236, 9);
@@ -78,10 +77,11 @@ nav ul li{
 }
 .lista li a{
     text-decoration: none;
+    font-family: 'Grandstander',cursive;
     font-size: 20px;
-    background-color: black;
+    background-color: #3f54ac;
     color: blanchedalmond;
-    box-shadow: 0px 0px 5px white, 0px 0px 15px rgb(220, 217, 20);
+    box-shadow: 0px 0px 5px white, 0px 0px 15px rgb(78, 78, 78);
     display: block;
     padding: 10px;
     width: 150px;
@@ -89,17 +89,20 @@ nav ul li{
     margin-right: 10px;
     margin-left: 10px;
     text-align: center;
+    height: 30px;
 }
 
 .lista li .submenu{
     width: 80px;
-    font-size: 15px;
+    font-size: 18px;
     text-align: center;
+    font-family: 'Grandstander',cursive;
 }
 .lista li .ordenar{
     width: 80px;
-    font-size: 15px;
+    font-size: 18px;
     text-align: center;
+    font-family: 'Grandstander',cursive;
 }
 .lista > li{
     float: left;
@@ -120,24 +123,26 @@ nav .lista{
 }
 /*Estilos botones de calcular y top 10*/
 nav .btns-calculo-top-all{
-    margin-right: 0px;
     width: auto;
     height: 80px;
-    display: flex;
-    justify-content: center;
+    margin-right: 15px;
+    
 }
 nav .btns{
     height: 50px;
-    width: 95px;
+    width: 90px;
     border-radius: 15px;
-    font-size: 17px;
-    background-color: black;
+    font-family: 'Grandstander',cursive;
+    font-size: 18px;
+    background-color: #3f54ac;
     border-style: none;
     color: blanchedalmond;
     cursor: pointer;
-    box-shadow: 0px 0px 5px white, 0px 0px 15px rgb(220, 217, 20);
-    margin-right: 20px;
-    margin-left: 10px;
+    box-shadow: 0px 0px 5px white, 0px 0px 15px rgb(78, 78, 78);
+}
+
+nav .btns-calculo-top-all #btn-all{
+    width: 150px;
 }
 
 /*color para subitem ordenar*/
@@ -151,16 +156,7 @@ nav .ordenar_por .ordenar:hover{
     -webkit-text-stroke: 0.8px rgb(8, 8, 8);
 }
 
-/*color para boton todos*/
-nav .tipos_de #todos:hover{
-    background-color: #b4b3b3;
-    color: transparent;
-    font-size: 20px;
-    font-family: 'Atma', cursive;
-    transform: scale(1.2);
-    padding: 5px 5px 5px 5px;
-    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
-}
+/*color para subitems */
 nav .tipos_de #normal:hover{
     background-color: #A8A878;
     color: transparent;
@@ -341,6 +337,7 @@ nav .tipos_de #fairy:hover{
     height: 250px;
     overflow: hidden;
     margin: 20px;
+    font-family: 'Grandstander',cursive;
     text-align: center;
     transition: all 0.25s;
     box-shadow: 0 20px 20px rgba(177, 189, 240, 0.2);
@@ -370,9 +367,11 @@ nav .tipos_de #fairy:hover{
 .card .letras label{
     color: rgb(250, 250, 249);
     font-size: 20px;
+    text-transform: capitalize;
 }
 .card .type label{
     font-size: 18px;
+    text-transform: capitalize;
 }
 
 /*Estilos para modal*/
@@ -412,93 +411,114 @@ nav .tipos_de #fairy:hover{
     justify-content: space-around;
     width: 60%;
     margin: auto;
-    margin-top: 5vw;
+    margin-top: 8vw;
   }
-
   .modal-card .encabezado label{
-      font-size: 3vw;
+      font-size: 2.5vw;
       font-family: 'Atma';
       color: chocolate;
       font-weight: bold;
   }
-
   .modal-card #nameModal{
     margin-left: 10vw;
   }
-
   .modal-card #nameGeneration{
     font-size: 2vw;
     font-family: 'Atma';
     margin-right: 8vw;
     font-weight: bold;
   }
-
   .modal-card .descripcion{
     display: flex;
-    text-align: center;
     width: 45vw;
-    height: 6vw;
+    height: 5vw;
     background-color: #ffffffcc;
     border-radius: 1vw;
     margin-left: 18vw;
     padding: 1%;
     border: dashed  #0B69A3;
-    margin-top: 1vw;
   }
-
   .modal-card .descripcion #about{
       font-size: 1vw;
       font-family: 'Roboto Mono';
       font-weight: 900;
   }
+  .resis-debil-peso-altura{
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 7vw;
+  }
 .poderes{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
-
 .poderes>div{
-    margin: 20px;
-    margin-right: 10%;
+    margin: 5px;
     font-family: 'Roboto Mono';
     font-weight: 900;
     font-size: 1vw;
-
+    text-transform: capitalize;
+    background-color:rgb(250, 250, 249);
+    width: 20vw;
+    border-radius: 1vw;
+    border: dashed #2CD8D5;
 }
-/*.modal-card .resistencia{
-    font-family: 'Roboto Mono';
-    font-weight: 900;
-    margin-right: 40vw;
-}
-
-.modal-card .listResis{
+.peso-altura{
     display: flex;
-    width: 50%;
-    justify-content: center;
-    font-family: 'Roboto Mono';
-    font-weight: 900;
-    font-size: 13px;
-    margin-left: 2vw;
+    flex-direction: column;
 }
-  .modal-card .debilidad{
+.peso-altura>label{
+    margin: 5px;
     font-family: 'Roboto Mono';
     font-weight: 900;
-    display: flex;
+    font-size: 1vw;   
+    background-color:rgb(250, 250, 249);
+    width: 10vw;
+    height: 2vw;
+    border-radius: 1vw;
+    border: dashed #F8D030;
 }
 
-.modal-card .listdebil{
-    display: flex;
-    width: 50%;
-    justify-content: center;
-    font-family: 'Roboto Mono';
-    font-weight: 900;
-    font-size: 13px;
-    margin-left: 2vw;
-}*/
+/*Estilos para lista desplegable de nombres de pokemon*/
 
+.estadistica{
+    display:none;
+    margin-left: 20vw;
+}
 
+.desocultar{
+    display: block;
+}
+.ocultar{
+    display: none;
+}
 
+.estadistica >select{
+    height: 3.5vw;
+    width: 15vw;
+    border-radius: 1vw;
+    font-size: 1.5vw;
+    font-family: 'Benne',serif;
+    text-transform: capitalize;
+}
 
+.estadistica>button{
+    height: 3.5vw;
+    width: 8vw;
+    border-radius: 1vw;
+    font-size: 1.5vw;
+    font-family: 'Benne',serif;
+    text-align: center; 
+}
 
-
-
-  
+.atras{
+    height: 3.5vw;
+    width: 8vw;
+    border-radius: 1vw;
+    font-size: 1.5vw;
+    font-family: 'Benne',serif;
+    text-align: center; 
+    float: left;
+    margin-right: 20vw;
+    
+}
