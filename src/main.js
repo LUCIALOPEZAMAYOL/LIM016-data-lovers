@@ -214,3 +214,16 @@ const loadSelect = (listaPoke) => { // Recibe un arreglo con los datos de los po
     });
   };
   
+  let arriba = document.getElementById('arriba');
+  arriba.addEventListener('click', function(){
+    document.documentElement.scrollTop = 0;
+  });
+  
+window.addEventListener("scroll", function(){
+  if(document.documentElement.scrollTop > 0){
+    arriba.style.display="block";
+  } else{
+    arriba.style.display="none";
+  }
+})
+
