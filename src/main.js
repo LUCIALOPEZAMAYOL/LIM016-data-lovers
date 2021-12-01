@@ -216,6 +216,16 @@ const loadSelect = (listaPoke) => { // Recibe un arreglo con los datos de los po
     console.log('grafico: ' + grafica)
   }
   
+  let arriba = document.getElementById('arriba');
+  arriba.addEventListener('click', function(){
+    document.documentElement.scrollTop = 0;
+  });
   
-   /* Select pokemones: Estadisticas */
-  
+window.addEventListener("scroll", function(){
+  if(document.documentElement.scrollTop > 0){
+    arriba.style.display="block";
+  } else{
+    arriba.style.display="none";
+  }
+})
+
