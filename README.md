@@ -268,7 +268,7 @@ Los criterios para considerar que has completado este proyecto son:
 
       Iteración de prototipos de baja fidelidad
 
-  ![Prototipo1](ImgReadmi/prototipo-de-baja-fidelidad.jpeg)
+  ![Prototipo1](ImgReadmi/prototipo-baja-fidelidad1.jpeg)
 
   ![prototipo2](ImgReadmi/prototipo-baja-fidelidad2.jpeg)
 
