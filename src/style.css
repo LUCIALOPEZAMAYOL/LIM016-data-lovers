@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 body{
     margin: 0;
     padding: 0;
@@ -520,5 +523,17 @@ nav .tipos_de #fairy:hover{
     text-align: center; 
     float: left;
     margin-right: 20vw;
-    
+}
+
+.arriba{
+    display: inline-block; /*modificar los margenes internos*/
+    padding: 0;
+    position: fixed; /*siempres se mostrará*/
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+.flechita{
+    width: 8vw;
+    height: 10vw;
 }
