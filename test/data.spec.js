@@ -1,9 +1,9 @@
-import { example, anotherExample } from '../src/data.js';
+import { filtradoTipo,ordenarPokemones,buscarPokemonPorNombre,compararPokemones,searchPokemon } from '../src/data.js';
 
-
-describe('example', () => {
+//Filtrar po tipo
+describe('filtradoTipo', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof filtradoTipo).toBe('function');
   });
 
   it('returns `example`', () => {

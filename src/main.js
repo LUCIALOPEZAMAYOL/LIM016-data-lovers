@@ -3,7 +3,6 @@ import {filtradoTipo, ordenarPokemones,buscarPokemonPorNombre, compararPokemones
 import data from './data/pokemon/pokemon.js';
 
 //Mostrar información en modal
-//Funcionalidad para mostrar los pokemon en cards
 
 let arregloPokesCards= [];
 const modalPokes = () => {
@@ -46,6 +45,8 @@ const modalPokes = () => {
 }
 
 modalPokes();
+
+//Funcionalidad para mostrar los pokemon en cards
 
 const mostrarCards = (pokemones)=>{
     const cards = document.querySelector("#root");
@@ -97,7 +98,6 @@ todos.addEventListener('click', function(){
     mostrarCards(data.pokemon);
 });
 
-
 //Buscar pokemones
 let search= document.querySelector('.buscador');
 search.addEventListener('keyup', (e)=>{
@@ -106,11 +106,7 @@ search.addEventListener('keyup', (e)=>{
     buscarPokemonPorNombre(inputSearch,arregloPokes);
 })
 
-/* -------------------------------------------------------------------------------------------------------- */
-/* */
-
-
-
+//Ocultar input buscardor, menu desplegable, all pokemon y calcular.
 const btnComparar = document.querySelector('#btnComparar');
 btnComparar.addEventListener('click', () => {  
   document.querySelector('.buscar').classList.add('ocultar');
@@ -129,7 +125,7 @@ document.querySelector('#selectDos').value = 'Seleccione Pokemon';
 
 });
 
-
+//Desocultar input buscardor, menu desplegable, all pokemon y calcular.
 const btnAtras = document.querySelector('#btnAtras');
 btnAtras.addEventListener('click', () => {  
   document.querySelector('.buscar').classList.remove('ocultar');
@@ -143,6 +139,7 @@ btnAtras.addEventListener('click', () => {
 mostrarCards(data.pokemon);   // Volver a mostrar a todos los pokemones
 });
 
+//Función de evento click a boton calcular y obtener nuevo arreglo poke
 const btnCalcular = document.querySelector('#btnCalcular');
 btnCalcular.addEventListener('click', () => {   
   const txtPoke1 = document.querySelector('#selectUno').value; // Nombre Pokemon 1
@@ -154,9 +151,21 @@ btnCalcular.addEventListener('click', () => {
   manupilarGrafico(txtPoke1,txtPoke2,dataPoke1,dataPoke2);  // Paso datos 
 });
 
+//Obtener nuevo arreglo con datos convertidos de string a numerico
+const loadPokemonSelect = (poke) => {
+  const arrayPoke = [];
+  poke.forEach((datos) => {
+    const ataque = parseInt(datos.stats['base-attack']);
+    const defensa = parseInt(datos.stats['base-defense']);
+    const stamina = parseInt(datos.stats['base-stamina']);
+    const cp = parseInt(datos.stats['max-cp']);
+    const hp = parseInt(datos.stats['max-hp']);
+    arrayPoke.push(ataque,defensa,stamina,cp,hp);
+  }); 
+  return arrayPoke; 
+};
 
-
-/*Cargar Select con los nombres de los pokemones*/
+//Cargar Select con los nombres de los pokemones
 const loadSelect = (listaPoke) => { // Recibe un arreglo con los datos de los pokemones
     let templateList = '';
     templateList = '<option disabled selected value="Seleccione Pokemon">Seleccione Pokemon</option>';  
@@ -169,22 +178,20 @@ const loadSelect = (listaPoke) => { // Recibe un arreglo con los datos de los po
   };
   loadSelect(data.pokemon); 
 
-  const loadPokemonSelect = (poke) => {
-    const arrayPoke = [];
-    poke.forEach((datos) => {
-      const ataque = parseInt(datos.stats['base-attack']);
-      const defensa = parseInt(datos.stats['base-defense']);
-      const stamina = parseInt(datos.stats['base-stamina']);
-      const cp = parseInt(datos.stats['max-cp']);
-      const hp = parseInt(datos.stats['max-hp']);
-      arrayPoke.push(ataque,defensa,stamina,cp,hp);
-    }); 
-    return arrayPoke; 
-  };
+//Creando elemento contenedor de grafico
 
-  /* Grafica - Estadistica */
-  
-  function Grafico(grafica,txtPoke1,txtPoke2,dataPoke1,dataPoke2){
+  function manupilarGrafico(txtPoke1,txtPoke2,dataPoke1,dataPoke2){
+    const container = document.querySelector('#root');
+    const canvas = '<canvas id="grafica" width="400" height="300"></canvas>';  
+    container.innerHTML += canvas;
+    const grafica = document.getElementById('grafica').getContext('2d'); // un contexto de renderizado de dos dimensiones
+    Grafico(grafica,txtPoke1,txtPoke2,dataPoke1,dataPoke2);
+    console.log('grafico: ' + grafica)
+  }
+
+
+// creación de Grafica - Estadistica 
+    function Grafico(grafica,txtPoke1,txtPoke2,dataPoke1,dataPoke2){
     //para que el eslint no lo lea al chart.
     // eslint-disable-next-line    
     const chart = new Chart (grafica,{  
@@ -205,17 +212,5 @@ const loadSelect = (listaPoke) => { // Recibe un arreglo con los datos de los po
         ]     
       },
     });
-  }
-
-  function manupilarGrafico(txtPoke1,txtPoke2,dataPoke1,dataPoke2){
-    const container = document.querySelector('#root');
-    const canvas = '<canvas id="grafica" width="400" height="300"></canvas>';  
-    container.innerHTML += canvas;
-    const grafica = document.getElementById('grafica').getContext('2d'); // un contexto de renderizado de dos dimensiones
-    Grafico(grafica,txtPoke1,txtPoke2,dataPoke1,dataPoke2);
-    console.log('grafico: ' + grafica)
-  }
-  
-  
-   /* Select pokemones: Estadisticas */
+  };
   

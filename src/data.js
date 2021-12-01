@@ -11,8 +11,8 @@
   };
 
 //Funcionalidad de ordenar el arreglo de pokemones
-      export const ordenarPokemones = (pokemones, sortBy, sortOrder) => {
-      let arrayPoke=[...pokemones];
+  export const ordenarPokemones = (pokemones, sortBy, sortOrder) => {
+    let arrayPoke=[...pokemones];
       if(sortOrder==='a-z'){
         return arrayPoke.sort(function (a,b){
           if(a[sortBy]>b[sortBy]) return 1; 
@@ -28,13 +28,11 @@
       }      
     };
 
-    //Buscar por nombre 
-    export const buscarPokemonPorNombre = (search,cards)=>{
-      console.log(cards);
-        cards.forEach(element => {
-      
-          let nombrePokemon = element.querySelector('#name').textContent;
-          if(nombrePokemon.includes(search)){
+//Buscar por nombre 
+  export const buscarPokemonPorNombre = (search,cards)=>{
+    cards.forEach(element => {
+      let nombrePokemon = element.querySelector('#name').textContent;
+        if(nombrePokemon.includes(search)){
             element.style.display = 'block'
           }else{
             element.style.display = 'none'
@@ -42,13 +40,12 @@
         });
     };
 
-//Función calcular
-
-    export const compararPokemones = (data, pokemonUno, pokemonDos) => {
-      let suma1 = '';
-      let suma2 = '';
-      const poke1 = [];
-      const poke2 = [];
+//Función calcular pokemon más poderoso
+  export const compararPokemones = (data, pokemonUno, pokemonDos) => {
+    let suma1 = '';
+    let suma2 = '';
+    const poke1 = [];
+    const poke2 = [];
       for (let i = 0; i < data.length; i++) {
         if (data[i].name == pokemonUno) {
           suma1 = parseInt(data[i].stats['base-attack']) + parseInt(data[i].stats['base-defense']) +
@@ -70,10 +67,9 @@
       }
     };
 
-
-
-    export const searchPokemon = (data, namePokemon) => {
-      const arrayPoke = [];
+//Retorna un nuevo arreglo de pokemon
+  export const searchPokemon = (data, namePokemon) => {
+    const arrayPoke = [];
       for (let i = 0; i < data.length; i++) {
         if (data[i].name == namePokemon) {
           arrayPoke.push(data[i]); 

@@ -6,6 +6,9 @@ body{
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+    width: 100%;
+    max-width: 100%;
+    overflow:scroll;
 }
 
 /* Estilos para encabezado*/
@@ -520,5 +523,6 @@ nav .tipos_de #fairy:hover{
     text-align: center; 
     float: left;
     margin-right: 20vw;
-    
 }
+
+/*Responsive*/
