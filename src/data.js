@@ -1,5 +1,8 @@
 //Funcionalodad de filtrar pokemon por tipo
   export const filtradoTipo = (pokemones, tipo) => {
+    if(pokemones===undefined ||pokemones===null || tipo===undefined ||tipo==='' || tipo===null){
+      throw new TypeError("Los datos de entrada son inválidos");
+    }
       let pokemonesFiltrados = pokemones.filter((pokemon)=>{
         for(let i=0; i<pokemon.type.length; i++){
           if(pokemon.type[i]===tipo) {
@@ -33,7 +36,8 @@
     cards.forEach(element => {
       let nombrePokemon = element.querySelector('#name').textContent;
         if(nombrePokemon.includes(search)){
-            element.style.display = 'block'
+            element.style.display = 'block';
+            //console.log('ele: ',element.style.display);
           }else{
             element.style.display = 'none'
           }
@@ -77,4 +81,3 @@
       }
       return arrayPoke; 
     };
-

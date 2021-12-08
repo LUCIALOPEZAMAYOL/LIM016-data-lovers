@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>POKEDATA</title>
     <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Atma:wght@600&family=Benne&family=Black+And+White+Picture&family=Grandstander&family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js" integrity="sha512-CWVDkca3f3uAWgDNVzW+W4XJbiC3CH84P2aWZXj+DqI6PNbTzXbl1dIzEHeNJpYSn4B6U8miSZb/hCws7FnUZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
@@ -12,8 +12,7 @@
     <span class="arriba" id="arriba"><img src="Imagenes/Pikachu_Subir.png" alt="Subeeeee" class="flechita"></span>
     <header class="header">
       <section class="imagenes">
-        <img src="Imagenes/BannerNew.png" class="logo">
-        
+        <img src="Imagenes/BannerNew.png" class="logo" style="width:100%">
       </section>
       <nav class="box_navegador">
         <section class="buscar">
@@ -50,23 +49,23 @@
               </ul>
             </li>
           </ul>
+         
         </section> 
-      
+        
       <section class="btns-calculo-top-all">
         <button class="btns" id="btn-all">All Pokemon</button>
         <button class="btns" id="btnComparar">Calcular</button>
-        
       </section>
-         
+      </nav>
+
       <div class="estadistica">
         <button id="btnAtras" class="atras">Regresar</button>
         <select name="" id="selectUno"></select>
         <select name="" id="selectDos"></select>
         <button id="btnCalcular" class="calcular">Calcular</button>
       </div>
-    </nav>
-
     </header>
+    
     
     <template id="template-card">
       <div class="card">
@@ -75,7 +74,7 @@
           <label id="name"></label>
         </div>
         <div>
-          <img>
+          <img style="max-width:50%">
         </div>
         <div class="type">
           <label id="type"></label>
@@ -89,32 +88,55 @@
 
     <template id="modal-container">
       <div class="modal-card">
-        <div class="encabezado">
-          <label id="nameModal"></label>
-          <label id="numModal"></label>
-        </div>
-
-        <label id="nameGeneration"></label>
-
-        <div class="descripcion">
-          <label id="about"></label>
-        </div>
-        <div class="resis-debil-peso-altura">
-          <div class="poderes">
-            <div class="listResis">
-              <label class="resistencia">Resistant</label><br>
-              <label id="resistant"></label>
+        <div class="contenedor-info-poke">
+          <div class="encabezado">
+            <label id="nameModal"></label>
+            <label id="numModal"></label>
+          </div>
+  
+          <label id="nameGeneration"></label>
+  
+          <div class="descripcion">
+            <label id="about"></label>
+          </div>
+          <div class="resis-debil-peso-altura">
+            <div class="poderes">
+              <div class="listResis">
+                <label class="resistencia">Resistant</label><br>
+                <label id="resistant"></label>
+              </div>
+        
+              <div class="listdebil">
+                <label class="debilidad">Weaknesses</label><br>
+                <label id="weaknesses"></label>
+              </div>
             </div>
-      
-            <div class="listdebil">
-              <label class="debilidad">Weaknesses</label><br>
-              <label id="weaknesses"></label>
+  
+            <div class="peso-altura">
+              <label id="height"></label>
+              <label id="weight"></label>
             </div>
           </div>
-
-          <div class="peso-altura">
-            <label id="height"></label>
-            <label id="weight"></label>
+          <div class="evoluciones">
+            <div class="titulo-evolution">
+              <label id="evolucion"></label>
+            </div>
+            
+            <div class="contenedor-evolution">
+              <div class="contenedor-prev">
+                <img id="imagen_prev">
+                <labe id="name_prev"></label>
+              </div>
+              <div class="contenedor-pokemon">
+                <img id="imagen_pokemon">
+                <label id="name_pokemon"></label>
+              </div>
+              <div class="contenedor-next">
+                <img id="imagen_next">
+                <label id="name_next"></label>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -122,7 +144,9 @@
 
     <div class="modal">
     </div>
-    
+    <footer class="piePagina">
+      <h3>Copyright © 2021 - Derechos Reservados</h3>
+    </footer>
     <script src="main.js" type="module"></script>
   </body>
 </html>

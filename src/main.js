@@ -7,7 +7,7 @@ import data from './data/pokemon/pokemon.js';
 let arregloPokesCards= [];
 const modalPokes = () => {
     arregloPokesCards.forEach(element => {
-    element.addEventListener('click', (e)=>{
+    element.addEventListener('click', ()=>{
         data.pokemon.forEach(function(pokes){
             let pokeElemento=element.querySelector('#name').textContent;
             if(pokes.name=== pokeElemento){
@@ -27,6 +27,34 @@ const modalPokes = () => {
                 }); 
                 templateModal.querySelector("#height").textContent="Height: " + pokes.size.height;
                 templateModal.querySelector("#weight").textContent="Weight: " + pokes.size.weight;
+                templateModal.querySelector('#name_prev').textContent = '';
+                templateModal.querySelector("#imagen_prev").setAttribute("src",'');
+                let indicador = 0; /*nos va a servir para cambiar contenido del querySelector evolution*/
+                templateModal.querySelector('#evolucion').textContent = 'NO TIENE EVOLUCIONES';
+                if(pokes.evolution.hasOwnProperty('prev-evolution')) {
+                  indicador = 1;
+                  let namePokePrev = pokes.evolution['prev-evolution'][0].name;
+                  templateModal.querySelector('#name_prev').textContent = namePokePrev;
+                  let pokesPrev = searchPokemon(data.pokemon,namePokePrev);
+                  templateModal.querySelector("#imagen_prev").setAttribute("src",pokesPrev[0].img);
+                }
+                templateModal.querySelector('#name_next').textContent='';
+                templateModal.querySelector("#imagen_next").setAttribute("src",'');
+                if(pokes.evolution.hasOwnProperty('next-evolution')){
+                  indicador = 1;
+                  let namePokeNext = pokes.evolution['next-evolution'][0].name;
+                  templateModal.querySelector('#name_next').textContent = namePokeNext; 
+                  let pokesNext = searchPokemon(data.pokemon,namePokeNext);
+                  templateModal.querySelector("#imagen_next").setAttribute("src",pokesNext[0].img);
+                }
+                templateModal.querySelector('#name_pokemon').textContent = '';
+                templateModal.querySelector("#imagen_pokemon").setAttribute("src",'');                
+                if(indicador === 1){
+                  templateModal.querySelector('#evolucion').textContent = ' EVOLUCIONES';
+                  templateModal.querySelector('#name_pokemon').textContent = pokes.name;
+                  templateModal.querySelector("#imagen_pokemon").setAttribute("src",pokes.img);
+                }
+
                 let clone = document.importNode(templateModal,true);
                 modalgeneral.textContent=' ';
                 modalgeneral.appendChild(clone);
@@ -80,7 +108,7 @@ const submenus=document.querySelectorAll('.submenu');
             let pokemonesFiltrados= filtradoTipo(data.pokemon,tipo);
             mostrarCards(pokemonesFiltrados);
         })
-    };
+    }
 
 //Funcionalidad para ordenar los pokemon
 const sortData=document.querySelectorAll('.ordenar');
@@ -90,7 +118,7 @@ for(let i=0; i<sortData.length; i++){
         var pokes = ordenarPokemones(data.pokemon,'name', ordenarPor);
         mostrarCards(pokes);
     })
-};
+}
 
 //Mostrar todos los pokemon
 const todos= document.getElementById('btn-all');
@@ -186,7 +214,6 @@ const loadSelect = (listaPoke) => { // Recibe un arreglo con los datos de los po
     container.innerHTML += canvas;
     const grafica = document.getElementById('grafica').getContext('2d'); // un contexto de renderizado de dos dimensiones
     Grafico(grafica,txtPoke1,txtPoke2,dataPoke1,dataPoke2);
-    console.log('grafico: ' + grafica)
   }
 
 
@@ -212,8 +239,9 @@ const loadSelect = (listaPoke) => { // Recibe un arreglo con los datos de los po
         ]     
       },
     });
-  };
-  
+  }
+
+//Función para botón que nos lleva al inicio de los card 
   let arriba = document.getElementById('arriba');
   arriba.addEventListener('click', function(){
     document.documentElement.scrollTop = 0;
