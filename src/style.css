@@ -6,6 +6,7 @@
 
 html{
     scroll-behavior: smooth;
+    cursor: url('Imagenes/snorlax.PNG'),auto;
 }
 
 body{
@@ -19,20 +20,19 @@ body{
 }
 
 /* Estilos para encabezado*/
-header{
+
+header .imagenes  {
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    display: flex;
+    justify-content: space-between;
     height: 100%;
     width: 100%;
 }
 
 /*Estilos para barra de navegación*/
-.box_navegador{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 90%;
-    max-width: 1200px;
-    height: 100%;
-    margin: 0 auto;
+#box_navegador{
+    margin-top: 1%;    
+    justify-content: space-between;
 }
 nav .buscador{
     display: flex;
@@ -225,7 +225,7 @@ nav .tipos_de #fairy:hover{
     width: 100%;
     max-width: 90%;
     height: auto;
-    display: flex;
+    
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
@@ -425,7 +425,7 @@ nav .tipos_de #fairy:hover{
     margin-left: 20vw;
 }
 .desocultar{
-    display: block;
+    display: flex;
 }
 .ocultar{
     display: none;
@@ -489,5 +489,97 @@ nav .tipos_de #fairy:hover{
     margin: 0 auto;
 }
 
+/*PÁGIAN DE INICIO*/
+
+.FondoInicio{
+    height: 100%;
+    width: 100%;
+    filter: brightness(50%);
+}
+
+.labelIni{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 80px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    -webkit-text-stroke: 0.9px rgb(8, 8, 8);
+   
+}
+
+.entrenador{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.entrenador .nombreEntrenador{
+    font-size: 20px
+}
+
+.entrenador .ingresarPokedex{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #fdce04;
+    border-radius: 6px;
+    border: 2px solid #fdce04;
+  }
+  .entrenador .ingresarPokedex:hover{
+    color: #1883ba;
+    background-color: #ffffff;
+    border: 2px solid #1883ba;
+  }
 
 
+
+.divlogo{
+    background: rgba(8,34,78,.9);
+}
+
+.pika{
+    height: 60px;
+    width: 80px;
+    float: right;
+}
+
+.logoCentro{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    height: 40%;
+}
+
+#divlogo{
+    background: rgba(8,34,78,.9);
+    justify-content: space-between;
+}
+.pikaDos{
+    height: 60px;
+    width: 80px;
+}
+.pokebola{
+    height: 60px;
+    width: 70px;
+}
+
+/*Letra de Bienvenida*/
+#Bienvenidos{
+    color: #fff;
+    font-size: 30px;
+    width: 100%;
+    margin-top: 5px;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    -webkit-text-stroke: 0.9px rgb(8, 8, 8);
+   
+}

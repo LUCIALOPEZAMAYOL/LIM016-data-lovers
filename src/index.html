@@ -10,15 +10,38 @@
   </head>
   <body>
     <span class="arriba" id="arriba"><img src="Imagenes/Pikachu_Subir.png" alt="Subeeeee" class="flechita"></span>
-    <header class="header">
+    
+    <section class="headerInicio" id="headerIni">
+      <div class="divlogo">
+        <img src="Imagenes/logito.PNG" class="logito" alt="">
+        <img src="Imagenes/Pika.gif" class="pika" alt="">
+      </div>
+      <div class="contenedor">
+        <img src="Imagenes/pokestop.png" class="FondoInicio">
+        <p for="" class="labelIni">Bienvenidos Maestr@s</p>
+        <img src="Imagenes/Logo.png" alt="" class="logoCentro">
+        <div class="entrenador">
+            <input type="text" class="nombreEntrenador" placeholder="Ingresa tu Nombre" id="nombreEntrenador">
+            <input type="submit"  value= "Ingresar a Pokedex" class="ingresarPokedex" id="ingresarPokedex">
+          </div>
+      </div> 
+    </section>
+    
+    <header id="header" class="ocultar">
       <section class="imagenes">
         <img src="Imagenes/BannerNew.png" class="logo" style="width:100%">
       </section>
-      <nav class="box_navegador">
-        <section class="buscar">
-          <input type="search" class="buscador" placeholder="Busca tu Pokémon" >
-        </section> 
-        <section class="box-filtros">
+    </header>
+    <div id="divlogo" class="ocultar">
+      <img src="Imagenes/icons8-pokeball-48.png" class="pokebola" alt="">
+      <label for="" id="Bienvenidos">Bienvenidos</label>
+      <img src="Imagenes/Pika.gif" class="pikaDos" alt="">
+    </div>
+    <nav id="box_navegador" class="ocultar">
+      <section class="buscar">
+        <input type="search" class="buscador" placeholder="Busca tu Pokémon" >
+      </section> 
+      <section class="box-filtros">
           <ul class="lista">
             <li><a href="#">Ordenar por</a>
               <ul class="ordenar_por">
@@ -49,13 +72,12 @@
               </ul>
             </li>
           </ul>
-         
         </section> 
         
-      <section class="btns-calculo-top-all">
-        <button class="btns" id="btn-all">All Pokemon</button>
-        <button class="btns" id="btnComparar">Calcular</button>
-      </section>
+        <section class="btns-calculo-top-all">
+          <button class="btns" id="btn-all">All Pokemon</button>
+          <button class="btns" id="btnComparar">Calcular</button>
+        </section>
       </nav>
 
       <div class="estadistica">
@@ -63,10 +85,7 @@
         <select name="" id="selectUno"></select>
         <select name="" id="selectDos"></select>
         <button id="btnCalcular" class="calcular">Calcular</button>
-      </div>
-    </header>
-    
-    
+      </div>    
     <template id="template-card">
       <div class="card">
         <div class="letras">
@@ -82,7 +101,7 @@
       </div>
     </template>
 
-    <div id="root">
+    <div id="root" class="ocultar">
     </div>
 
 

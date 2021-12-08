@@ -248,10 +248,28 @@ const loadSelect = (listaPoke) => { // Recibe un arreglo con los datos de los po
   });
   
 window.addEventListener("scroll", function(){
-  if(document.documentElement.scrollTop > 0){
+  if(document.documentElement.scrollTop > 500){
     arriba.style.display="block";
   } else{
     arriba.style.display="none";
   }
 })
 
+const ingresarPokedex = document.querySelector(".ingresarPokedex");
+document.querySelector('#nombreEntrenador').focus();
+
+ingresarPokedex.addEventListener('click', () => {
+  const nombreEntrenador = document.querySelector(".nombreEntrenador").value;
+  document.querySelector('#headerIni').classList.remove('desocultar');
+  document.querySelector('#headerIni').classList.add('ocultar');
+  document.querySelector('#root').classList.add('desocultar');
+  document.querySelector('#root').classList.remove('ocultar');
+  document.querySelector('#header').classList.add('desocultar');
+  document.querySelector('#header').classList.remove('ocultar');
+  document.querySelector('#box_navegador').classList.remove('ocultar');
+  document.querySelector('#box_navegador').classList.add('desocultar');
+  document.querySelector('#divlogo').classList.remove('ocultar');
+  document.querySelector('#divlogo').classList.add('desocultar');
+  document.querySelector('#Bienvenidos').textContent = 'Bienvenidos Maestr@ Pokemon ' + nombreEntrenador;
+
+});
