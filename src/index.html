@@ -17,11 +17,11 @@
         <img src="Imagenes/Pika.gif" class="pika" alt="">
       </div>
       <div class="contenedor">
-        <img src="Imagenes/pokestop.png" class="FondoInicio">
+        <img src="Imagenes/pokestop.png"  class="FondoInicio" style="width:100%">
         <p for="" class="labelIni">Bienvenidos Maestr@s</p>
         <img src="Imagenes/Logo.png" alt="" class="logoCentro">
         <div class="entrenador">
-            <input type="text" class="nombreEntrenador" placeholder="Ingresa tu Nombre" id="nombreEntrenador">
+            <input type="text" class="nombreEntrenador" placeholder="Ingresa tu Nombre" id="nombreEntrenador" autocomplete="off">
             <input type="submit"  value= "Ingresar a Pokedex" class="ingresarPokedex" id="ingresarPokedex">
           </div>
       </div> 
@@ -72,13 +72,13 @@
               </ul>
             </li>
           </ul>
-        </section> 
+      </section> 
         
-        <section class="btns-calculo-top-all">
-          <button class="btns" id="btn-all">All Pokemon</button>
-          <button class="btns" id="btnComparar">Calcular</button>
-        </section>
-      </nav>
+      <section class="btns-calculo-top-all">
+        <button class="btns" id="btn-all">All Pokemon</button>
+        <button class="btns" id="btnComparar">Calcular</button>
+      </section>
+    </nav>
 
       <div class="estadistica">
         <button id="btnAtras" class="atras">Regresar</button>
@@ -96,7 +96,7 @@
           <img style="max-width:50%">
         </div>
         <div class="type">
-          <label id="type"></label>
+          
         </div>        
       </div>
     </template>
@@ -122,7 +122,9 @@
             <div class="poderes">
               <div class="listResis">
                 <label class="resistencia">Resistant</label><br>
-                <label id="resistant"></label>
+                <label id="resistant">
+                  
+                </label>
               </div>
         
               <div class="listdebil">
@@ -144,7 +146,7 @@
             <div class="contenedor-evolution">
               <div class="contenedor-prev">
                 <img id="imagen_prev">
-                <labe id="name_prev"></label>
+                <label id="name_prev"></label>
               </div>
               <div class="contenedor-pokemon">
                 <img id="imagen_pokemon">

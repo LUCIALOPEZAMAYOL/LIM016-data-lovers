@@ -7,7 +7,8 @@
 * [3. Criterios de aceptación mínimos del proyecto](#3-criterios-de-aceptación-mínimos-del-proyecto)
 * [4. Diseño de la interfaz de usuario](#4-diseño-de-la-interfaz-de-usuario)
 * [5. Información de los usuarios](#5-información-de-los-usuarios)
-* [6. Checklist](#6-checklist)
+* [6. Pruebas Unitarias](#6-pruebas-unitarias)
+* [7. Checklist](#6-checklist)
 
 ***
 
@@ -288,13 +289,6 @@ Los criterios para considerar que has completado este proyecto son:
 
       Se muestra la vista de estadística, donde de la comparación de dos pokemos da como resultado el más poderoso.
 
-### Testeos de usabilidad
-
-Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
-en base a los resultados, deberás iterar tus diseños. Cuéntanos
-qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
-mejoraste en tu propuesta final.
-
 
 ## 5. Información de los usuarios
 
@@ -313,23 +307,29 @@ mejoraste en tu propuesta final.
       La aplicación se usaría en cualquier momento que el usuario necesite conocer más sobre los
       pokemon.
 
-## 6. Checklist
+## 6. Pruebas Unitarias
+    PRUEBAS UNITARIAS
 
-* [ ] Usa VanillaJS.
-* [ ] Pasa linter (`npm run pretest`)
-* [ ] Pasa tests (`npm test`)
-* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
+  ![pruebasunitarias](ImgReadmi/unitTest.PNG)  
+
+
+## 7. Checklist
+
+* [✓] Usa VanillaJS.
+* [✓] Pasa linter (`npm run pretest`)
+* [✓] Pasa tests (`npm test`)
+* [✓] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
   lines y branches.
-* [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
-* [ ] Incluye historias de usuario en `README.md`.
-* [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
+* [✓] Incluye _Definición del producto_ clara e informativa en `README.md`.
+* [✓] Incluye historias de usuario en `README.md`.
+* [✓] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
   `README.md`.
-* [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
+* [✓] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
   en `README.md`.
 * [ ] Incluye link a Zeplin en `README.md`.
 * [ ] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.
-* [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-* [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-* [ ] UI: Permite filtrar data en base a una condición.
-* [ ] UI: Es _responsive_.
+* [✓] UI: Muestra lista y/o tabla con datos y/o indicadores.
+* [✓] UI: Permite ordenar data por uno o más campos (asc y desc).
+* [✓] UI: Permite filtrar data en base a una condición.
+* [✓] UI: Es _responsive_.

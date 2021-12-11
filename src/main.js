@@ -3,7 +3,6 @@ import {filtradoTipo, ordenarPokemones,buscarPokemonPorNombre, compararPokemones
 import data from './data/pokemon/pokemon.js';
 
 //Mostrar información en modal
-
 let arregloPokesCards= [];
 const modalPokes = () => {
     arregloPokesCards.forEach(element => {
@@ -18,21 +17,23 @@ const modalPokes = () => {
                 templateModal.querySelector("#nameGeneration").textContent="Region: " + pokes.generation.name;
                 templateModal.querySelector("#about").textContent=pokes.about;
                 templateModal.querySelector("#resistant").textContent=' ';
-                pokes.resistant.forEach(resistencia => { 
-                    templateModal.querySelector("#resistant").textContent +=' '  + resistencia;
+                pokes.resistant.forEach(resistant => { 
+                    templateModal.querySelector("#resistant").innerHTML += `<div class=${resistant}>${resistant}</div>`;
                 });
                 templateModal.querySelector("#weaknesses").textContent=' ';
-                pokes.weaknesses.forEach(debilidad => { 
-                    templateModal.querySelector("#weaknesses").textContent +=' '  + debilidad;
+                pokes.weaknesses.forEach(weaknesses => { 
+                    templateModal.querySelector("#weaknesses").innerHTML += `<div class=${weaknesses}>${weaknesses}</div>`;
                 }); 
                 templateModal.querySelector("#height").textContent="Height: " + pokes.size.height;
                 templateModal.querySelector("#weight").textContent="Weight: " + pokes.size.weight;
                 templateModal.querySelector('#name_prev').textContent = '';
                 templateModal.querySelector("#imagen_prev").setAttribute("src",'');
+                templateModal.querySelector('#imagen_prev').style.display='none';
                 let indicador = 0; /*nos va a servir para cambiar contenido del querySelector evolution*/
                 templateModal.querySelector('#evolucion').textContent = 'NO TIENE EVOLUCIONES';
-                if(pokes.evolution.hasOwnProperty('prev-evolution')) {
+                if(Object.prototype.hasOwnProperty.call(pokes.evolution,'prev-evolution')) {
                   indicador = 1;
+                  templateModal.querySelector('#imagen_prev').style.display='block';
                   let namePokePrev = pokes.evolution['prev-evolution'][0].name;
                   templateModal.querySelector('#name_prev').textContent = namePokePrev;
                   let pokesPrev = searchPokemon(data.pokemon,namePokePrev);
@@ -40,16 +41,21 @@ const modalPokes = () => {
                 }
                 templateModal.querySelector('#name_next').textContent='';
                 templateModal.querySelector("#imagen_next").setAttribute("src",'');
-                if(pokes.evolution.hasOwnProperty('next-evolution')){
+                templateModal.querySelector('#imagen_next').style.display='none';
+                if(Object.prototype.hasOwnProperty.call(pokes.evolution, 'next-evolution')){
                   indicador = 1;
+                  templateModal.querySelector('#imagen_next').style.display='block';
                   let namePokeNext = pokes.evolution['next-evolution'][0].name;
                   templateModal.querySelector('#name_next').textContent = namePokeNext; 
                   let pokesNext = searchPokemon(data.pokemon,namePokeNext);
                   templateModal.querySelector("#imagen_next").setAttribute("src",pokesNext[0].img);
                 }
                 templateModal.querySelector('#name_pokemon').textContent = '';
-                templateModal.querySelector("#imagen_pokemon").setAttribute("src",'');                
+                templateModal.querySelector("#imagen_pokemon").setAttribute("src",''); 
+                templateModal.querySelector('#imagen_pokemon').style.display='none';
+                //templateModal.getElementById("imagen_pokemon").removeAttribute("src");
                 if(indicador === 1){
+                  templateModal.querySelector('#imagen_pokemon').style.display='block';
                   templateModal.querySelector('#evolucion').textContent = ' EVOLUCIONES';
                   templateModal.querySelector('#name_pokemon').textContent = pokes.name;
                   templateModal.querySelector("#imagen_pokemon").setAttribute("src",pokes.img);
@@ -86,9 +92,9 @@ const mostrarCards = (pokemones)=>{
         template.querySelector("img").setAttribute("src",pokemon.img);
         template.querySelector("#num").textContent = pokemon.num;
         template.querySelector("#name").textContent = pokemon.name;
-        template.querySelector("#type").textContent = '';
+        template.querySelector(".type").textContent = '';
         pokemon.type.forEach(type => { 
-            template.querySelector("#type").textContent += '  '  + type;
+            template.querySelector(".type").innerHTML += `<div class=${type}>${type}</div>`
         }); 
         let clone = document.importNode(template,true);
         fragmento.appendChild(clone);
@@ -123,7 +129,9 @@ for(let i=0; i<sortData.length; i++){
 //Mostrar todos los pokemon
 const todos= document.getElementById('btn-all');
 todos.addEventListener('click', function(){
-    mostrarCards(data.pokemon);
+  document.querySelector(".buscador").textContent="";
+    mostrarCards(data.pokemon); 
+    
 });
 
 //Buscar pokemones
@@ -146,9 +154,9 @@ btnComparar.addEventListener('click', () => {
   document.querySelector('.estadistica').classList.add('desocultar');
   document.querySelector('.estadistica').classList.remove('ocultar');
   
-mostrarCards(data.pokemon);   // Volver a mostrar a todos los pokemones
+mostrarCards(data.pokemon);   
 
-document.querySelector('#selectUno').value = 'Seleccione Pokemon'; // Volver a mostrar a todos los nombres de pokemones
+document.querySelector('#selectUno').value = 'Seleccione Pokemon'; 
 document.querySelector('#selectDos').value = 'Seleccione Pokemon';
 
 });
@@ -164,7 +172,7 @@ btnAtras.addEventListener('click', () => {
   document.querySelector('.btns-calculo-top-all').classList.add('desocultar');
   document.querySelector('.estadistica').classList.add('ocultar');
 
-mostrarCards(data.pokemon);   // Volver a mostrar a todos los pokemones
+mostrarCards(data.pokemon);   
 });
 
 //Función de evento click a boton calcular y obtener nuevo arreglo poke
@@ -210,7 +218,7 @@ const loadSelect = (listaPoke) => { // Recibe un arreglo con los datos de los po
 
   function manupilarGrafico(txtPoke1,txtPoke2,dataPoke1,dataPoke2){
     const container = document.querySelector('#root');
-    const canvas = '<canvas id="grafica" width="400" height="300"></canvas>';  
+    const canvas = '<div class="canvas"><canvas id="grafica" width="400" height="300"></canvas></div>';  
     container.innerHTML += canvas;
     const grafica = document.getElementById('grafica').getContext('2d'); // un contexto de renderizado de dos dimensiones
     Grafico(grafica,txtPoke1,txtPoke2,dataPoke1,dataPoke2);

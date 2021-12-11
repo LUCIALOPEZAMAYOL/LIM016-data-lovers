@@ -13478,15 +13478,6 @@ export default {
           "name": "up grade",
           "img": "https://pokemon.gameinfo.io/images/item/thumbs/200/up-grade.png"
         },
-        "next-evolution": [{
-          "num": "474",
-          "name": "porygon-z",
-          "candy-cost": "100",
-          "evolution-item": {
-            "name": "sinnoh stone",
-            "img": "https://pokemon.gameinfo.io/images/item/thumbs/200/sinnoh-stone.png"
-          }
-        }]
       }]
     }
   },
@@ -22305,15 +22296,6 @@ export default {
     "buddy-distance-km": "3",
     "evolution": {
       "candy": "porygon candy",
-      "next-evolution": [{
-        "num": "474",
-        "name": "porygon-z",
-        "candy-cost": "100",
-        "evolution-item": {
-          "name": "sinnoh stone",
-          "img": "https://pokemon.gameinfo.io/images/item/thumbs/200/sinnoh-stone.png"
-        }
-      }],
       "prev-evolution": [{
         "num": "137",
         "name": "porygon",
