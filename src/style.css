@@ -9,7 +9,7 @@ html{
     /*cursor: url('Imagenes/snorlax.PNG'),auto;*/
 }
 
-body{
+.todaLaPagina{
     background-image: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
     background-repeat: no-repeat;
     background-size: cover;
@@ -499,40 +499,69 @@ nav .tipos_de #fairy:hover{
 
 /*PÁGIAN DE INICIO*/
 .headerInicio{
-    justify-content: center;
-    flex-direction: column;
-}
-.FondoInicio{
+    background-image: linear-gradient(rgb(5, 7, 12,0.3), rgba(5,7,12,0.3)),url(Imagenes/pokestop.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     height: 100%;
     width: 100%;
-    filter: brightness(50%);
+    position: relative;
+}
+.divlogo{
+    background: rgba(8,34,78,.9);
+    width: 100%;
+    height: 6vw;
+    display: flex;
+    justify-content: space-between;
+}
+.contenedor{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.pika{
+    height: 6vw;
+    width: 6vw;
+}
+.logito{
+    height: 6vw;
+    width: 10vw;
+}
+.bienvenida{
+    display: flex;
+    justify-content: center;
 }
 .labelIni{
-    position: absolute;
     top: 10vw;
     left: 50vw;
-    transform: translate(-50%, -50%);
     color: #fff;
     font-size: 8vw;
-    width: 100%;
     text-align: center;
     font-family: 'Bebas Neue', cursive;
     -webkit-text-stroke: 0.9px rgb(8, 8, 8);
 }
-.entrenador{
-    position: absolute;
-    top: 45vw;
-    left: 80vw;
-    transform: translate(-50%, -50%);
-    width: 100%;
+.logoCentral{
+    display: flex;
+    justify-content: center;
 }
-.entrenador .nombreEntrenador{
+.logoCentro{
+    width: 30vw;
+    height: 20vw;
+}
+.inputDatos{
+    display: flex;
+    justify-content: center;
+}
+.inputDatos .nombreEntrenador{
     font-size: 2vw;
     height: 5vw;
     border-radius: 1vw;
     padding: 2vw;
 }
-.entrenador .ingresarPokedex{
+.inputDatos .ingresarPokedex{
     text-decoration: none;
     padding: 1vw;
     font-weight: 600;
@@ -542,43 +571,20 @@ nav .tipos_de #fairy:hover{
     border-radius: 2vw;
     border: 0.5vw solid #fdce04;
   }
-.entrenador .ingresarPokedex:hover{
+.inputDatos .ingresarPokedex:hover{
     color: #1883ba;
     background-color: #ffffff;
     border: 2px solid #1883ba;
   }
 
-.divlogo{
-    background: rgba(8,34,78,.9);
-    width: 100%;
-    height: 6vw;
-}
-
-.pika{
-    height: 6vw;
-    width: 6vw;
-    float: right;
-}
-.logito{
-    height: 6vw;
-    width: 10vw;
-}
-
-.logoCentro{
-  position: absolute;
-    align-items: center;
-    top: 25vw;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-    width: 30vw;
-    height: 20vw;
-}
+/*Estilo a logo en cards*/
 
 #divlogo{
     width: 100%;
     height: 6vw;
     background: rgba(8,34,78,.9);
     justify-content: space-between;
+    align-items: center;
 }
 .pikaDos{
     height: 6vw;
@@ -588,21 +594,15 @@ nav .tipos_de #fairy:hover{
     height: 6vw;
     width: 6vw;
 }
-
-/*Letra de Bienvenida*/
 #Bienvenidos{
     color: #fff;
     font-size: 3vw;
-    width: 100%;
-    margin-top: 1vw;
     text-align: center;
     font-family: 'Bebas Neue', cursive;
-    -webkit-text-stroke: 0.9px rgb(8, 8, 8);
-   
+    -webkit-text-stroke: 0.9px rgb(8, 8, 8);  
 }
 
 /*COLOR A LOS TIPOS POR CARDS*/
-
 .card .type .normal{
     background-color: #A8A878;
 }
@@ -669,7 +669,6 @@ nav .tipos_de #fairy:hover{
 .listResis #resistant{
     display: flex;
 }
-
 .listResis #resistant .normal{
     background-color: #A8A878;
 }
@@ -791,7 +790,6 @@ nav .tipos_de #fairy:hover{
 .listdebil #weaknesses .fairy{
     background-color: #EE99AC;
 }
-
 .canvas{
     height: 35vw;
     width: 35vw;
