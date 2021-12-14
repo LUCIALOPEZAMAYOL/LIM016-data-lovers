@@ -1,0 +1,799 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    /*cursor: url('Imagenes/snorlax.PNG'),auto;*/
+}
+
+.todaLaPagina{
+    background-image: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Estilos para encabezado*/
+
+header .imagenes  {
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+/*Estilos para barra de navegación*/
+#box_navegador{
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 1vw auto;
+}
+nav .buscador{
+    display: flex;
+    justify-content: right;
+    padding: 1vw 3vw 1vw 5vw;
+    font-size: 1.2vw;
+    border-radius: 2vw;
+    outline: none;
+    border: none;
+    background: url(Imagenes/pikachu.PNG) no-repeat 1px center;
+    background-size: 5vw;
+    width: 5vw;
+    transition: all .5s;
+    height: 5vw;
+} 
+input.buscador:hover, input.buscador:focus, input.buscador:active{
+    width: 20vw;
+    background-color: rgb(250, 250, 249);
+    border-color: rgb(236, 236, 9);
+    box-shadow: 0px 0px 10px white, 0px 0px 20px rgb(200, 220, 20);
+}
+nav .buscar{
+    width: 30%;
+    height: 8vw;
+    align-items: center;
+}
+/*Estilo para lista desplegable general*/
+.box-filtros{
+    height: 8vw;
+}
+.lista{
+    height: 100%;
+    transition: transform 0.5s;
+    display: flex;
+}
+.lista li{
+    list-style: none;
+    position:relative;
+    height: 100%;
+}
+
+.lista li>ul{
+    display: none;
+    position:absolute;
+}
+.lista li:hover>ul{
+    display: flex;
+}
+
+.lista li a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-family: 'Grandstander',cursive;
+    font-size: 1.2vw;
+    background-color: #3f54ac;
+    color: blanchedalmond;
+    box-shadow: 0px 0px 5px white, 0px 0px 15px rgb(78 78 78);
+    padding: 1.1vw;
+    border-radius: 1vw;
+    width: 10vw;
+    margin: auto 0.5vw;
+    
+}
+.lista li .tipos_de{
+    width: 8vw;
+    font-size: 1vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 5;
+    
+}
+.lista li .ordenar_por{
+    font-size: 1vw;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 5;
+}
+
+/*Estilos botones de calcular y all pokemon*/
+nav .btns-calculo-top-all{
+    width: 30%;
+    height: 8vw;
+    justify-content: space-evenly;
+    align-items: center;
+}
+nav .btns{
+    height: 3.5vw;
+    width: 7vw;
+    border-radius: 1vw;
+    font-family: 'Grandstander',cursive;
+    font-size: 1.2vw;
+    background-color: #3f54ac;
+    border-style: none;
+    color: blanchedalmond;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px white, 0px 0px 15px rgb(78 78 78);
+}
+
+nav .btns-calculo-top-all #btn-all{
+    width: 10vw;
+}
+
+/*color para subitem ordenar*/
+nav .ordenar_por .ordenar:hover{
+    background-color: #b4b3b3;
+    color: transparent;
+    font-size: 1.1vw;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 1vw 1vw 1vw 1vw;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+
+/*color para subitems tipos */
+nav .tipos_de .submenu:hover{
+    color: transparent;
+    font-size: 1.1vw;
+    font-family: 'Atma', cursive;
+    transform: scale(1.2);
+    padding: 1vw 1vw 1vw 1vw;
+    -webkit-text-stroke: 0.8px rgb(8, 8, 8);
+}
+nav .tipos_de #normal:hover{
+    background-color: #A8A878;
+}
+nav .tipos_de #fighting:hover{
+    background-color: #C02038;
+}
+nav .tipos_de #flying:hover{
+    background-color: #A890F0;
+}
+nav .tipos_de #poison:hover{
+    background-color: #A040A0;
+}
+nav .tipos_de #ground:hover{
+    background-color: #E0C068;
+}
+nav .tipos_de #rock:hover{
+    background-color: #B8A038;
+}
+nav .tipos_de #bug:hover{
+    background-color: #A8B820;
+}
+nav .tipos_de #ghost:hover{
+    background-color: #705898;
+ }
+nav .tipos_de #steel:hover{
+    background-color: #B8B8D0;
+ }
+nav .tipos_de #fire:hover{
+    background-color: #F08030;
+}
+nav .tipos_de #water:hover{
+    background-color: #6890F0;
+}
+nav .tipos_de #grass:hover{
+    background-color: #78C850;
+}
+nav .tipos_de #electric:hover{
+    background-color: #F8D030;
+}
+nav .tipos_de #psychic:hover{
+    background-color: #F85888;
+}
+nav .tipos_de #ice:hover{
+    background-color: #98D8D8;
+}
+nav .tipos_de #dragon:hover{
+    background-color: #7038F8;
+}
+nav .tipos_de #dark:hover{
+    background-color: #705848;
+}
+nav .tipos_de #fairy:hover{
+    background-color: #EE99AC;
+}
+/*Estilos cards*/
+#root{
+    width: 100%;
+    max-width: 90%;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+#root .card{
+    background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #E0E0E0 26%, #201F1F 48%, #E91919 75%, #E91919 10%);
+    border: 0.5vw solid rgb(255, 255, 255);
+    border-radius: 15vw;
+    width: 20vw;
+    height: 20vw;
+    overflow: hidden;
+    margin: 1.5vw;
+    font-family: 'Grandstander',cursive;
+    text-align: center;
+    transition: all 0.25s;
+    box-shadow: 0 5vw 5vw rgb(177 189 240 / 20%);
+    display: flex;
+    flex-direction: column;
+}
+#root .card label{
+    position: relative;
+    top: 6vw;
+}
+#root .card:hover{
+    transform: translateY(-1.5vw);
+}
+#root .card div{
+    background-size: cover;
+    margin-top: 6vw;
+    align-items: center;
+}
+#root .card .letras{
+    display: flex;
+    flex-direction: column;
+    margin-top: -5vw;
+}
+#root .card .type{
+    margin-top: -6.5vw;  
+    display: flex;
+    justify-content: center;
+    font-size: 1.2vw;
+    text-transform: capitalize;
+}
+#root .card .type>div{
+    border-radius: 1vw;
+    padding: .6vw;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.card .letras label{
+    color: rgb(250, 250, 249);
+    font-size: 2vw;
+    text-transform: capitalize;
+}
+
+/*Estilos para modal general*/
+
+.modal{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.829);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+  }
+  .modal::before{   /*pseudoelemtos*/
+    content: 'X';
+    position: absolute;
+    top: 2vw;
+    right: 2vw;
+    font-size: 30px;
+    font-family: 'Grandstander';
+    background-color: gold;
+    padding: 7px 7px 7px 7px;
+    border-radius: 5px;
+  }
+  .modal-card{
+    background-image: url(Imagenes/Pokedex2.png);
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position: center;
+    height: 90%;
+    width: 90%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /*Estilos para contenido de modal*/
+  .contenedor-info-poke{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+    height: 60vw;
+    margin-right: 7vw;
+    margin-top: 2.5vw;
+  }     
+  .modal .modal-card .encabezado{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-direction: row;
+  }
+  .modal-card .encabezado label{
+    font-size: 2.2vw;
+      font-family: 'Atma';
+      color: chocolate;
+      font-weight: bold;
+  }
+  .modal-card #nameGeneration{
+    font-size: 2vw;
+    font-family: 'Atma';
+    font-weight: bold;
+    width: 100%;
+  }
+  .modal-card .descripcion{
+    display: flex;
+    background-color: #ffffffcc;
+    border-radius: 1vw;
+    border: dashed #0B69A3;
+    padding: 0.3vw;
+  }
+  .modal-card .descripcion #about{
+      font-size: 1vw;
+      font-family: 'Roboto Mono';
+      font-weight: 900;
+  }
+  .resis-debil-peso-altura{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+.poderes{
+    display: flex;
+    flex-direction: column;
+}
+.poderes>div{
+    margin: 0.2vw;
+    font-family: 'Roboto Mono';
+    font-weight: 900;
+    font-size: 1vw;
+    text-transform: capitalize;
+    background-color: rgb(250, 250, 249);
+    width: 40vw;
+    border-radius: 1vw;
+    border: dashed #2CD8D5;
+    padding: 0.5vw;
+}
+.peso-altura{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.peso-altura>label{
+    margin: 0.5vw;
+    font-family: 'Roboto Mono';
+    font-weight: 900;
+    font-size: 1vw;
+    background-color: rgb(250, 250, 249);
+    width: 100%;
+    padding: 0.5vw;
+    border-radius: 1vw;
+    border: dashed #F8D030;
+}
+.evoluciones{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.contenedor-evolution{
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Roboto Mono';
+    font-weight: 900;
+    font-size: 1vw;
+}
+
+.titulo-evolution{
+    font-family: 'Atma';
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.contenedor-evolution>div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+}
+
+.contenedor-evolution div>img{
+    height: 5vw;
+    width: 5vw;
+}
+.contenedor-evolution div>label{
+    font-size: 1vw;
+    text-transform: capitalize;
+}
+/*Estilos para lista desplegable de nombres de pokemon*/
+.estadistica{
+    display:none;
+    margin-left: 20vw;
+}
+.desocultar{
+    display: flex;
+}
+.ocultar{
+    display: none;
+}
+.estadistica >select{
+    height: 3.5vw;
+    width: 15vw;
+    border-radius: 1vw;
+    font-size: 1.5vw;
+    font-family: 'Benne',serif;
+    text-transform: capitalize;
+}
+.estadistica>button{
+    height: 3.5vw;
+    width: 8vw;
+    border-radius: 1vw;
+    font-size: 1.5vw;
+    font-family: 'Benne',serif;
+    text-align: center; 
+}
+.atras{
+    height: 3.5vw;
+    width: 8vw;
+    border-radius: 1vw;
+    font-size: 1.5vw;
+    font-family: 'Benne',serif;
+    text-align: center; 
+    float: left;
+    margin-right: 20vw;
+}
+
+/*Estilos para boton que nos regresa al inicio de la página*/ 
+.arriba{
+    display: inline-block;
+    padding: 0;
+    position: fixed; 
+    bottom: 0;
+    right: 0;
+    display: none;
+    z-index: 5;;
+}
+.flechita{
+    width: 8vw;
+    height: 10vw;
+}
+
+/*Footer*/
+.piePagina{
+    background-color:darkslateblue;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5vw;
+    height: 6vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.piePagina>h3{
+    position: absolute;
+    top: 50%;
+    margin: 0 auto;
+}
+
+/*PÁGIAN DE INICIO*/
+.headerInicio{
+    background-image: linear-gradient(rgb(5, 7, 12,0.3), rgba(5,7,12,0.3)),url(Imagenes/pokes.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.divlogo{
+    background: rgba(8,34,78,.9);
+    width: 100%;
+    height: 7vw;
+    display: flex;
+    justify-content: space-between;
+}
+.contenedor{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.pika{
+    height: 6vw;
+    width: 6vw;
+}
+.logito{
+    height: 6vw;
+    width: 10vw;
+}
+.bienvenida{
+    display: flex;
+    justify-content: center;
+}
+.labelIni{
+    top: 10vw;
+    left: 50vw;
+    color: #fff;
+    font-size: 8vw;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    -webkit-text-stroke: 0.9px rgb(8, 8, 8);
+}
+.logoCentral{
+    display: flex;
+    justify-content: center;
+}
+.logoCentro{
+    width: 30vw;
+    height: 20vw;
+}
+.inputDatos{
+    display: flex;
+    justify-content: center;
+}
+.inputDatos .nombreEntrenador{
+    font-size: 2vw;
+    height: 5vw;
+    border-radius: 1vw;
+    padding: 2vw;
+}
+.inputDatos .ingresarPokedex{
+    text-decoration: none;
+    padding: 1vw;
+    font-weight: 600;
+    font-size: 2vw;
+    color: #ffffff;
+    background-color: #fdce04;
+    border-radius: 2vw;
+    border: 0.5vw solid #fdce04;
+  }
+.inputDatos .ingresarPokedex:hover{
+    color: #1883ba;
+    background-color: #ffffff;
+    border: 2px solid #1883ba;
+}
+
+/*Estilo a logo en cards*/
+
+#divlogo{
+    width: 100%;
+    height: 6vw;
+    background: rgba(8,34,78,.9);
+    justify-content: space-between;
+    align-items: center;
+}
+.pikaDos{
+    height: 6vw;
+    width: 6vw;
+}
+.pokebola{
+    height: 6vw;
+    width: 6vw;
+}
+#Bienvenidos{
+    color: #fff;
+    font-size: 3vw;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    -webkit-text-stroke: 0.9px rgb(8, 8, 8);  
+}
+
+/*COLOR A LOS TIPOS POR CARDS*/
+.card .type .normal{
+    background-color: #A8A878;
+}
+.card .type .fighting{
+    background-color: #C02038;
+}
+.card .type .flying{
+    background-color: #A890F0;
+}
+.card .type .poison{
+    background-color: #A040A0;
+}
+.card .type .ground{
+    background-color: #E0C068;
+}
+.card .type .rock{
+    background-color: #B8A038;
+}
+.card .type .bug{
+    background-color: #A8B820;
+}
+.card .type .ghost{
+    background-color: #705898;
+ }
+.card .type .steel{
+    background-color: #B8B8D0;
+ }
+.card .type .fire{
+    background-color: #F08030;
+}
+.card .type .water{
+    background-color: #6890F0;
+}
+.card .type .grass{
+    background-color: #78C850;
+}
+.card .type .electric{
+    background-color: #F8D030;
+}
+.card .type .psychic{
+    background-color: #F85888;
+}
+.card .type .ice{
+    background-color: #98D8D8;
+}
+.card .type .dragon{
+    background-color: #7038F8;
+}
+.card .type .dark{
+    background-color: #705848;
+}
+.card .type .fairy{
+    background-color: #EE99AC;
+}
+
+/*COLOR A LAS RESISTENCIAS DEL MODAL*/
+.listResis #resistant>div{
+    width: 6vw;
+    border-radius: 1vw;
+    padding: .5vw;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.listResis #resistant{
+    display: flex;
+}
+.listResis #resistant .normal{
+    background-color: #A8A878;
+}
+.listResis #resistant .fighting{
+    background-color: #C02038;
+}
+.listResis #resistant .flying{
+    background-color: #A890F0;
+}
+.listResis #resistant .poison{
+    background-color: #A040A0;
+}
+.listResis #resistant .ground{
+    background-color: #E0C068;
+}
+.listResis #resistant .rock{
+    background-color: #B8A038;
+}
+.listResis #resistant .bug{
+    background-color: #A8B820;
+}
+.listResis #resistant .ghost{
+    background-color: #705898;
+ }
+.listResis #resistant .steel{
+    background-color: #B8B8D0;
+ }
+.listResis #resistant .fire{
+    background-color: #F08030;
+}
+.listResis #resistant .water{
+    background-color: #6890F0;
+}
+.listResis #resistant .grass{
+    background-color: #78C850;
+}
+.listResis #resistant .electric{
+    background-color: #F8D030;
+}
+.listResis #resistant .psychic{
+    background-color: #F85888;
+}
+.listResis #resistant .ice{
+    background-color: #98D8D8;
+}
+.listResis #resistant .dragon{
+    background-color: #7038F8;
+}
+.listResis #resistant .dark{
+    background-color: #705848;
+}
+.listResis #resistant .fairy{
+    background-color: #EE99AC;
+}
+
+/*COLOR A LAS DEBILIDADES DEL MODAL*/
+.listdebil #weaknesses>div{
+    width: 6vw;
+    border-radius: 1vw;
+    padding: .5vw;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.listdebil #weaknesses{
+    display: flex;
+}
+
+.listdebil #weaknesses .normal{
+    background-color: #A8A878;
+}
+.listdebil #weaknesses .fighting{
+    background-color: #C02038;
+}
+.listdebil #weaknesses .flying{
+    background-color: #A890F0;
+}
+.listdebil #weaknesses .poison{
+    background-color: #A040A0;
+}
+.listdebil #weaknesses .ground{
+    background-color: #E0C068;
+}
+.listdebil #weaknesses .rock{
+    background-color: #B8A038;
+}
+.listdebil #weaknesses .bug{
+    background-color: #A8B820;
+}
+.listdebil #weaknesses .ghost{
+    background-color: #705898;
+ }
+.listdebil #weaknesses .steel{
+    background-color: #B8B8D0;
+ }
+.listdebil #weaknesses .fire{
+    background-color: #F08030;
+}
+.listdebil #weaknesses .water{
+    background-color: #6890F0;
+}
+.listdebil #weaknesses .grass{
+    background-color: #78C850;
+}
+.listdebil #weaknesses .electric{
+    background-color: #F8D030;
+}
+.listdebil #weaknesses .psychic{
+    background-color: #F85888;
+}
+.listdebil #weaknesses .ice{
+    background-color: #98D8D8;
+}
+.listdebil #weaknesses .dragon{
+    background-color: #7038F8;
+}
+.listdebil #weaknesses .dark{
+    background-color: #705848;
+}
+.listdebil #weaknesses .fairy{
+    background-color: #EE99AC;
+}
+
+.canvas{
+    height: 35vw;
+    width: 35vw;
+    margin-left: 5vw;
+    margin-top: 2vw;
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>POKEDATA</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Atma:wght@600&family=Benne&family=Black+And+White+Picture&family=Grandstander&family=Roboto+Mono:wght@600&display=swap"
+    rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js"
+    integrity="sha512-CWVDkca3f3uAWgDNVzW+W4XJbiC3CH84P2aWZXj+DqI6PNbTzXbl1dIzEHeNJpYSn4B6U8miSZb/hCws7FnUZA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <section class="headerInicio" id="headerIni">
+    <div class="divlogo">
+      <img src="Imagenes/logito.PNG" class="logito" alt="">
+      <img src="Imagenes/Pika.gif" class="pika" alt="">
+    </div>
+    <div class="contenedor">
+      <div class="bienvenida">
+        <p class="labelIni">Bienvenidos Maestr@s</p>
+      </div>
+      <div class="logoCentral">
+        <img src="Imagenes/Logo.png" alt="" class="logoCentro">
+      </div>
+      <div class="inputDatos">
+        <input type="text" class="nombreEntrenador" placeholder="Ingresa tu Nombre" id="nombreEntrenador"
+        autocomplete="off">
+        <input type="submit" value="Ingresar a Pokedex" class="ingresarPokedex" id="ingresarPokedex">
+      </div>
+    </div>
+  </section>
+
+  <div class="todaLaPagina">
+    <header id="header" class="ocultar">
+      <section class="imagenes">
+        <img src="Imagenes/BannerNew.png" class="logo" style="width:100%">
+      </section>
+    </header>
+    <div id="divlogo" class="ocultar">
+      <img src="Imagenes/icons8-pokeball-48.png" class="pokebola" alt="">
+      <label id="Bienvenidos">Bienvenidos</label>
+      <img src="Imagenes/Pika.gif" class="pikaDos" alt="">
+    </div>
+    <nav id="box_navegador" class="ocultar">
+      <section class="buscar">
+        <input type="search" class="buscador" placeholder="Busca tu Pokémon">
+      </section>
+      <section class="box-filtros">
+        <ul class="lista">
+          <li><a href="#">Ordenar por</a>
+            <ul class="ordenar_por">
+              <li><a href="#" class="ordenar" id="a-z">A-Z</a></li>
+              <li><a href="#" class="ordenar" id="z-a">Z-A</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Tipos </a>
+            <ul class="tipos_de">
+              <li><a href="#" class="submenu" id="normal">Normal</a></li>
+              <li><a href="#" class="submenu" id="fighting">Lucha</a></li>
+              <li><a href="#" class="submenu" id="flying">Volador</a></li>
+              <li><a href="#" class="submenu" id="poison">Veneno</a></li>
+              <li><a href="#" class="submenu" id="ground">Tierra</a></li>
+              <li><a href="#" class="submenu" id="rock">Roca</a></li>
+              <li><a href="#" class="submenu" id="bug">Bicho</a></li>
+              <li><a href="#" class="submenu" id="ghost">Fantasma</a></li>
+              <li><a href="#" class="submenu" id="steel">Acero</a></li>
+              <li><a href="#" class="submenu" id="fire">Fuego</a></li>
+              <li><a href="#" class="submenu" id="water">Agua</a></li>
+              <li><a href="#" class="submenu" id="grass">Planta</a></li>
+              <li><a href="#" class="submenu" id="electric">Eléctrico</a></li>
+              <li><a href="#" class="submenu" id="psychic">Psíquico</a></li>
+              <li><a href="#" class="submenu" id="ice">Hielo</a></li>
+              <li><a href="#" class="submenu" id="dragon">Dragón</a></li>
+              <li><a href="#" class="submenu" id="dark">Siniestro</a></li>
+              <li><a href="#" class="submenu" id="fairy">Hada</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="btns-calculo-top-all">
+        <button class="btns" id="btn-all">All Pokemon</button>
+        <button class="btns" id="btnComparar">Calcular</button>
+      </section>
+    </nav>
+
+    <div class="estadistica">
+      <button id="btnAtras" class="atras">Regresar</button>
+      <select name="" id="selectUno"></select>
+      <select name="" id="selectDos"></select>
+      <button id="btnCalcular" class="calcular">Calcular</button>
+    </div>
+
+    <template id="template-card">
+      <div class="card">
+        <div class="letras">
+          <label id="num"></label>
+          <label id="name"></label>
+        </div>
+        <div>
+          <img style="max-width:50%">
+        </div>
+        <div class="type">
+
+        </div>
+      </div>
+    </template>
+    <div id="root" class="ocultar">
+    </div>
+    
+    <span class="arriba" id="arriba"><img src="Imagenes/Pikachu_Subir.png" alt="Subeeeee" class="flechita"></span>
+
+    <template id="modal-container">
+      <div class="modal-card">
+        <div class="contenedor-info-poke">
+          <div class="encabezado">
+            <label id="nameModal"></label>
+            <label id="numModal"></label>
+          </div>
+  
+          <label id="nameGeneration"></label>
+  
+          <div class="descripcion">
+            <label id="about"></label>
+          </div>
+          <div class="resis-debil-peso-altura">
+            <div class="poderes">
+              <div class="listResis">
+                <label class="resistencia">Resistant</label><br>
+                <label id="resistant">
+  
+                </label>
+              </div>
+  
+              <div class="listdebil">
+                <label class="debilidad">Weaknesses</label><br>
+                <label id="weaknesses"></label>
+              </div>
+            </div>
+  
+            <div class="peso-altura">
+              <label id="height"></label>
+              <label id="weight"></label>
+            </div>
+          </div>
+          <div class="evoluciones">
+            <div class="titulo-evolution">
+              <label id="evolucion"></label>
+            </div>
+  
+            <div class="contenedor-evolution">
+              <div class="contenedor-prev">
+                <img id="imagen_prev">
+                <label id="name_prev"></label>
+              </div>
+              <div class="contenedor-pokemon">
+                <img id="imagen_pokemon">
+                <label id="name_pokemon"></label>
+              </div>
+              <div class="contenedor-next">
+                <img id="imagen_next">
+                <label id="name_next"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <div class="modal">
+    </div>
+  </div>
+  <script src="main.js" type="module"></script>
+</body>
+
+</html>
