@@ -499,18 +499,18 @@ nav .tipos_de #fairy:hover{
 
 /*PÁGIAN DE INICIO*/
 .headerInicio{
-    background-image: linear-gradient(rgb(5, 7, 12,0.3), rgba(5,7,12,0.3)),url(Imagenes/pokestop.png);
+    background-image: linear-gradient(rgb(5, 7, 12,0.3), rgba(5,7,12,0.3)),url(Imagenes/pokes.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     height: 100%;
     width: 100%;
-    position: relative;
+    position: absolute;
 }
 .divlogo{
     background: rgba(8,34,78,.9);
     width: 100%;
-    height: 6vw;
+    height: 7vw;
     display: flex;
     justify-content: space-between;
 }
@@ -520,7 +520,7 @@ nav .tipos_de #fairy:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 .pika{
     height: 6vw;
@@ -575,7 +575,7 @@ nav .tipos_de #fairy:hover{
     color: #1883ba;
     background-color: #ffffff;
     border: 2px solid #1883ba;
-  }
+}
 
 /*Estilo a logo en cards*/
 
@@ -790,6 +790,7 @@ nav .tipos_de #fairy:hover{
 .listdebil #weaknesses .fairy{
     background-color: #EE99AC;
 }
+
 .canvas{
     height: 35vw;
     width: 35vw;
