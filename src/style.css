@@ -49,7 +49,7 @@ nav .buscador{
     background-size: 5vw;
     width: 5vw;
     transition: all .5s;
-    height: 5vw;
+    height: 5vh;
 } 
 input.buscador:hover, input.buscador:focus, input.buscador:active{
     width: 20vw;
@@ -59,7 +59,7 @@ input.buscador:hover, input.buscador:focus, input.buscador:active{
 }
 nav .buscar{
     width: 30%;
-    height: 8vw;
+    height: 8vh;
     align-items: center;
 }
 /*Estilo para lista desplegable general*/
@@ -438,7 +438,7 @@ nav .tipos_de #fairy:hover{
     display: none;
 }
 .estadistica >select{
-    height: 3.5vw;
+    height: 3.5vh;
     width: 15vw;
     border-radius: 1vw;
     font-size: 1.5vw;
@@ -454,7 +454,7 @@ nav .tipos_de #fairy:hover{
     text-align: center; 
 }
 .atras{
-    height: 3.5vw;
+    height: 3.5vh;
     width: 8vw;
     border-radius: 1vw;
     font-size: 1.5vw;

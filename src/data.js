@@ -15,15 +15,15 @@
 
 //Funcionalidad de ordenar el arreglo de pokemones
   export const ordenarPokemones = (pokemones, sortBy, sortOrder) => {
-    let arrayPoke=[...pokemones];
+    let arrayPokes=[...pokemones];
       if(sortOrder==='a-z'){
-        return arrayPoke.sort(function (a,b){
+        return arrayPokes.sort(function (a,b){
           if(a[sortBy]>b[sortBy]) return 1; 
           if(a[sortBy]===b[sortBy]) return 0;
           return -1;
         });
       }else{
-        return arrayPoke.sort(function (a,b){
+        return arrayPokes.sort(function (a,b){
           if(a[sortBy]<b[sortBy]) return 1; 
           if(a[sortBy]===b[sortBy]) return 0;
           return -1;
@@ -37,7 +37,6 @@
       let nombrePokemon = element.querySelector('#name').textContent;
         if(nombrePokemon.includes(search)){
             element.style.display = 'block';
-            //console.log('ele: ',element.style.display);
           }else{
             element.style.display = 'none'
           }

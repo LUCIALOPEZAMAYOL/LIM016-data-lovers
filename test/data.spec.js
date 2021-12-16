@@ -1,4 +1,4 @@
-import { filtradoTipo,ordenarPokemones,buscarPokemonPorNombre,compararPokemones,searchPokemon} from '../src/data.js';
+import { filtradoTipo,ordenarPokemones,buscarPokemonPorNombre,compararPokemones,searchPokemon} from '../src/data';
 import { JSDOM } from "jsdom";
 import dataPokemon from '../src/data/pokemon/pokemon.js';
 const dom = new JSDOM();
