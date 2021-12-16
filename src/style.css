@@ -49,7 +49,7 @@ nav .buscador{
     background-size: 5vw;
     width: 5vw;
     transition: all .5s;
-    height: 5vh;
+    height: 7vh;
 } 
 input.buscador:hover, input.buscador:focus, input.buscador:active{
     width: 20vw;
@@ -98,7 +98,7 @@ nav .buscar{
     border-radius: 1vw;
     width: 10vw;
     margin: auto 0.5vw;
-    
+    margin-top: 1vh;
 }
 .lista li .tipos_de{
     width: 8vw;
@@ -137,6 +137,7 @@ nav .btns{
 
 nav .btns-calculo-top-all #btn-all{
     width: 10vw;
+    margin-top: 1vh;
 }
 
 /*color para subitem ordenar*/
