@@ -439,7 +439,7 @@ nav .tipos_de #fairy:hover{
     display: none;
 }
 .estadistica >select{
-    height: 3.5vh;
+    height: 6vh;
     width: 15vw;
     border-radius: 1vw;
     font-size: 1.5vw;
